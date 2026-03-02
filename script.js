@@ -338,7 +338,7 @@ function initApplicationForm() {
       submitBtn.disabled = true;
 
       try {
-        const res = await fetch('/.netlify/functions/submit-application', {
+        const res = await fetch('/api/submit-application', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
