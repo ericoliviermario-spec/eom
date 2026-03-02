@@ -544,19 +544,14 @@ a:hover {
   object-fit: cover;
   object-position: center 20%;
   z-index: 0;
-  filter: grayscale(10%) brightness(0.6);
+  filter: none;
 }
 
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(14, 12, 11, 0.35) 0%,
-    rgba(14, 12, 11, 0.5) 50%,
-    rgba(14, 12, 11, 0.82) 100%
-  );
+  background: rgba(232, 224, 210, 0.08);
   pointer-events: none;
   z-index: 1;
 }
@@ -569,7 +564,7 @@ a:hover {
 .hero__divider {
   width: 60px;
   height: 1px;
-  background: var(--text-secondary);
+  background: #3a2e22;
   margin: 0 auto var(--space-xl);
   border: none;
 }
@@ -580,7 +575,7 @@ a:hover {
   font-size: clamp(18px, 2.5vw, 20px);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: #1e1610;
   margin-bottom: var(--space-lg);
 }
 
@@ -589,9 +584,20 @@ a:hover {
   font-weight: 300;
   font-size: clamp(24px, 3.5vw, 32px);
   letter-spacing: 0.02em;
-  color: var(--text-secondary);
+  color: #3a2e22;
   line-height: 1.6;
   margin-bottom: var(--space-xl);
+}
+
+.hero .btn {
+  color: #1e1610;
+  border-color: #3a2e22;
+}
+
+.hero .btn:hover {
+  background: #1e1610;
+  color: #f0ebe3;
+  border-color: #1e1610;
 }
 
 /* Pathways */
