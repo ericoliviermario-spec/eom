@@ -598,9 +598,9 @@ a:hover {
 .pathways {
   padding: var(--space-5xl) var(--space-md);
   background-color: #0e0c0b;
-  background-image: url('hero-bg2.jpg');
+  background-image: url('pathway-bg.jpg');
   background-size: cover;
-  background-position: center 95%;
+  background-position: center center;
   position: relative;
 }
 
