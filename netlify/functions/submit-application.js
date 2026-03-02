@@ -135,7 +135,7 @@ exports.handler = async function (event) {
 
   try {
     const { error } = await resend.emails.send({
-      from:     'onboarding@resend.dev',
+      from:     'applications@ericoliviermario.com',
       to:       ['friess.eric@gmail.com'],
       reply_to: applicantEmail || undefined,
       subject,
