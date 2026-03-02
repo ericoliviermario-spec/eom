@@ -809,6 +809,54 @@ a:hover {
   padding: var(--space-5xl) var(--space-md);
 }
 
+.positioning__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: var(--space-4xl);
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.positioning__img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(20%) contrast(1.05);
+}
+
+.positioning__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.positioning__text p {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.positioning__text p:first-child {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .positioning__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .positioning__img {
+    aspect-ratio: 4 / 3;
+    object-position: center 20%;
+  }
+}
+
 /* Invitation */
 .invitation {
   padding: var(--space-5xl) var(--space-md);
