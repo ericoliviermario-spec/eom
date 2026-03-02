@@ -59,7 +59,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 19px;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -68,7 +68,7 @@ html {
 body {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.7;
   letter-spacing: 0.01em;
   color: var(--text-primary);
@@ -94,17 +94,17 @@ h1, h2, h3, .display {
 }
 
 h1, .display {
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(44px, 6.5vw, 76px);
   letter-spacing: 0.02em;
 }
 
 h2 {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(32px, 4.5vw, 44px);
   letter-spacing: 0.01em;
 }
 
 h3 {
-  font-size: clamp(22px, 3vw, 32px);
+  font-size: clamp(26px, 3.5vw, 36px);
   letter-spacing: 0.01em;
   font-weight: 400;
 }
@@ -112,7 +112,7 @@ h3 {
 .subheading {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(20px, 2.5vw, 24px);
   letter-spacing: 0.04em;
   color: var(--text-secondary);
 }
@@ -120,7 +120,7 @@ h3 {
 .label {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-secondary);
@@ -130,7 +130,7 @@ h3 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(16px, 2vw, 19px);
+  font-size: clamp(20px, 2.5vw, 23px);
   letter-spacing: 0.01em;
   color: var(--text-secondary);
 }
@@ -198,7 +198,7 @@ a:hover {
   display: inline-block;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 16px 40px;
@@ -246,7 +246,7 @@ a:hover {
 .form-error {
   margin-top: var(--space-md);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
+  font-size: 16px;
   color: #c46a6a;
   letter-spacing: 0.03em;
 }
@@ -257,7 +257,7 @@ a:hover {
   gap: 8px;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: 0.06em;
   color: var(--text-secondary);
   text-decoration: none;
@@ -376,7 +376,7 @@ a:hover {
 .nav__link {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-secondary);
@@ -438,7 +438,7 @@ a:hover {
 .nav__mobile-overlay a {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 32px;
+  font-size: 34px;
   letter-spacing: 0.02em;
   color: var(--text-primary);
   text-decoration: none;
@@ -471,7 +471,7 @@ a:hover {
 .footer__name {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.06em;
   color: var(--text-secondary);
 }
@@ -492,7 +492,7 @@ a:hover {
 .footer__link {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.06em;
   color: var(--text-muted);
   text-decoration: none;
@@ -504,7 +504,7 @@ a:hover {
 }
 
 .footer__streaming {
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.04em;
   color: var(--text-muted);
 }
@@ -561,7 +561,7 @@ a:hover {
 .hero__title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: clamp(18px, 2.5vw, 20px);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-primary);
@@ -571,7 +571,7 @@ a:hover {
 .hero__tagline {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(20px, 3vw, 28px);
+  font-size: clamp(24px, 3.5vw, 32px);
   letter-spacing: 0.02em;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -620,7 +620,7 @@ a:hover {
 .pathway__label {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -629,12 +629,12 @@ a:hover {
 .pathway__title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 30px;
   color: var(--text-primary);
 }
 
 .pathway__desc {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--text-secondary);
   max-width: 280px;
   line-height: 1.7;
@@ -741,14 +741,14 @@ a:hover {
 .arc__node-numeral {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 21px;
   color: var(--text-secondary);
 }
 
 .arc__node-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -819,7 +819,7 @@ a:hover {
 .invitation__text {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(22px, 3.0vw, 28px);
   line-height: 1.8;
   color: var(--text-secondary);
   max-width: 520px;
@@ -846,7 +846,7 @@ a:hover {
 }
 
 .music-entrance__arrow {
-  font-size: 24px;
+  font-size: 26px;
   color: var(--text-muted);
   margin-top: var(--space-xl);
   animation: float 3s ease-in-out infinite;
@@ -928,7 +928,7 @@ a:hover {
 .chapter__numeral {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -938,7 +938,7 @@ a:hover {
 .chapter__title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(32px, 4.5vw, 44px);
   letter-spacing: 0.02em;
   margin-bottom: var(--space-xl);
 }
@@ -958,7 +958,7 @@ a:hover {
 .chapter__artwork-placeholder {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--text-muted);
   font-style: italic;
 }
@@ -978,12 +978,12 @@ a:hover {
 .chapter__track-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 18px;
   color: var(--text-primary);
 }
 
 .chapter__track-duration {
-  font-size: 12px;
+  font-size: 16px;
   color: var(--text-muted);
 }
 
@@ -991,7 +991,7 @@ a:hover {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-style: italic;
-  font-size: clamp(17px, 2vw, 20px);
+  font-size: clamp(21px, 2.5vw, 24px);
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 480px;
@@ -1001,7 +1001,7 @@ a:hover {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-style: italic;
-  font-size: 15px;
+  font-size: 18px;
   color: var(--text-muted);
   padding-top: var(--space-md);
   border-top: 1px solid var(--border-subtle);
@@ -1029,7 +1029,7 @@ a:hover {
 .music-bridge__text {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(22px, 3.0vw, 28px);
   line-height: 1.8;
   color: var(--text-secondary);
   max-width: 480px;
@@ -1101,7 +1101,7 @@ a:hover {
 
 .audio-player__time {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-size: 15px;
   color: var(--text-muted);
   flex-shrink: 0;
   min-width: 36px;
@@ -1142,7 +1142,7 @@ a:hover {
 
 .philosophy p {
   color: var(--text-secondary);
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.8;
 }
 
@@ -1180,14 +1180,14 @@ a:hover {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-style: italic;
-  font-size: 19px;
+  font-size: 22px;
   color: var(--text-secondary);
   margin-bottom: var(--space-xl);
 }
 
 .module-card__body {
   color: var(--text-secondary);
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.8;
   margin-bottom: var(--space-lg);
 }
@@ -1195,7 +1195,7 @@ a:hover {
 .module-card__transform {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--text-primary);
   padding: var(--space-md) 0;
   border-top: 1px solid var(--border-subtle);
@@ -1204,7 +1204,7 @@ a:hover {
 }
 
 .module-card__format {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-muted);
   margin-bottom: var(--space-xl);
 }
@@ -1229,7 +1229,7 @@ a:hover {
 .fit-col__title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--text-primary);
   margin-bottom: var(--space-lg);
 }
@@ -1242,7 +1242,7 @@ a:hover {
 }
 
 .fit-col__item {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--text-secondary);
   line-height: 1.7;
   padding-left: 16px;
@@ -1284,7 +1284,7 @@ a:hover {
 
 .apply-bridge p {
   color: var(--text-secondary);
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.8;
   max-width: 400px;
   margin: 0 auto var(--space-xl);
@@ -1327,7 +1327,7 @@ a:hover {
 .transformation__col h3 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -1336,7 +1336,7 @@ a:hover {
 
 .transformation__col p {
   color: var(--text-secondary);
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.8;
 }
 
@@ -1360,7 +1360,7 @@ a:hover {
 .weeks__title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -1379,7 +1379,7 @@ a:hover {
 .week__label {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
@@ -1388,13 +1388,13 @@ a:hover {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-style: italic;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--accent-ember);
   margin-bottom: var(--space-sm);
 }
 
 .week__desc {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--text-secondary);
   line-height: 1.7;
 }
@@ -1423,7 +1423,7 @@ a:hover {
 .container-section__item-label {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -1433,7 +1433,7 @@ a:hover {
 .container-section__item-value {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--text-primary);
 }
 
@@ -1453,7 +1453,7 @@ a:hover {
 
 .investment p {
   color: var(--text-secondary);
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.8;
   max-width: 420px;
   margin: 0 auto var(--space-lg);
@@ -1541,14 +1541,14 @@ a:hover {
 .form-step__question {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: clamp(20px, 3vw, 26px);
+  font-size: clamp(24px, 3.5vw, 30px);
   line-height: 1.6;
   color: var(--text-primary);
   margin-bottom: var(--space-xl);
 }
 
 .form-step__hint {
-  font-size: 14px;
+  font-size: 17px;
   color: var(--text-muted);
   margin-top: -16px;
   margin-bottom: var(--space-xl);
@@ -1564,7 +1564,7 @@ a:hover {
   color: var(--text-primary);
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 19px;
   padding: 12px 0;
   outline: none;
   transition: border-color var(--duration-normal) var(--ease-default);
@@ -1644,13 +1644,13 @@ a:hover {
 }
 
 .form-radio__label {
-  font-size: 15px;
+  font-size: 18px;
   color: var(--text-secondary);
   line-height: 1.5;
 }
 
 .form-radio__sublabel {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-muted);
 }
 
@@ -1664,7 +1664,7 @@ a:hover {
 
 .form-back {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-muted);
   background: none;
   border: none;
@@ -1725,7 +1725,7 @@ a:hover {
 .about-hero__placeholder {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 16px;
+  font-size: 19px;
   color: var(--text-muted);
 }
 
@@ -1735,7 +1735,7 @@ a:hover {
 
 .about-bio p {
   color: var(--text-secondary);
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.9;
 }
 
@@ -1750,7 +1750,7 @@ a:hover {
 
 .about-lineage p {
   color: var(--text-secondary);
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.9;
 }
 
@@ -1760,7 +1760,7 @@ a:hover {
 }
 
 .about-bridge .microcopy {
-  font-size: 20px;
+  font-size: 23px;
   max-width: 380px;
   margin: 0 auto var(--space-xl);
   line-height: 1.7;
@@ -1779,7 +1779,7 @@ a:hover {
   padding: 12px 24px;
   z-index: 1000;
   border: 1px solid var(--accent-ember);
-  font-size: 13px;
+  font-size: 16px;
   text-decoration: none;
 }
 
