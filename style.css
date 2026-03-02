@@ -449,6 +449,18 @@ a:hover {
   .nav__toggle { display: block; }
 }
 
+/* Homepage: dark nav links over the light hero image */
+.home-page .nav:not(.nav--scrolled) .nav__link {
+  color: #3a2e22;
+}
+.home-page .nav:not(.nav--scrolled) .nav__link:hover,
+.home-page .nav:not(.nav--scrolled) .nav__link--active {
+  color: #1e1610;
+}
+.home-page .nav:not(.nav--scrolled) .nav__toggle-line {
+  background: #3a2e22;
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
