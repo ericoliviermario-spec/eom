@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Environment variables — never commit
+.env
+.env.local
+.env.production
+
+# Netlify
+.netlify/
+
+# macOS
+.DS_Store

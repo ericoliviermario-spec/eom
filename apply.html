@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply — Eric Olivier Mario</title>
+  <meta name="description" content="Application to work with Eric Olivier Mario. Every application is read personally.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo">EOM</a>
+    <ul class="nav__links">
+      <li><a href="music.html" class="nav__link">Music</a></li>
+      <li><a href="the-journey.html" class="nav__link">The Journey</a></li>
+      <li><a href="apply.html" class="nav__link nav__link--active">Apply</a></li>
+      <li><a href="about.html" class="nav__link">About</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span class="nav__toggle-line"></span>
+      <span class="nav__toggle-line"></span>
+      <span class="nav__toggle-line"></span>
+    </button>
+  </nav>
+
+  <div class="nav__mobile-overlay" aria-hidden="true">
+    <a href="music.html">Music</a>
+    <a href="the-journey.html">The Journey</a>
+    <a href="apply.html">Apply</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <div class="page-wrapper">
+    <main id="main">
+
+      <!-- Entrance -->
+      <section class="apply-entrance">
+        <p class="label hero-reveal hero-reveal-1">Application</p>
+        <h1 class="hero-reveal hero-reveal-2" style="margin-top: var(--space-lg); margin-bottom: var(--space-lg);">Begin here.</h1>
+        <p class="subheading hero-reveal hero-reveal-3" style="text-align: center;">Before we begin working together, a few questions — not to qualify you, but to understand where you are.</p>
+        <p class="microcopy hero-reveal hero-reveal-3" style="margin-top: var(--space-md);">There are no right answers. Only honest ones.</p>
+      </section>
+
+      <!-- Form Section -->
+      <section class="form-section">
+        <div class="form-container">
+
+          <!-- Progress -->
+          <div class="form-progress" role="progressbar" aria-label="Application progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="11">
+            <div class="form-progress__fill" style="width: 11%;"></div>
+          </div>
+
+          <form id="application-form" novalidate>
+
+            <!-- Step 1: Identity -->
+            <div class="form-step active" data-step="1">
+              <p class="form-step__question">What is your name, and what name do you create under?</p>
+              <p class="form-step__hint">If they are the same, that is fine.</p>
+              <input class="form-input" type="text" name="name" placeholder="Your name" autocomplete="name">
+              <div class="spacer-lg"></div>
+              <input class="form-input" type="text" name="artist_name" placeholder="Artist name (if different)">
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back" disabled aria-disabled="true">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Practice -->
+            <div class="form-step" data-step="2">
+              <p class="form-step__question">Describe your creative practice in a few sentences.</p>
+              <p class="form-step__hint">What do you make? How long have you been making it?</p>
+              <textarea class="form-textarea" name="practice" placeholder="I make..."></textarea>
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Current State -->
+            <div class="form-step" data-step="3">
+              <p class="form-step__question">Where are you right now in your artistic life?</p>
+              <p class="form-step__hint">Not your career — your inner relationship to creating.</p>
+              <textarea class="form-textarea" name="current_state" placeholder="Right now I am..."></textarea>
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 4: The Pull -->
+            <div class="form-step" data-step="4">
+              <p class="form-step__question">What brought you to this page?</p>
+              <p class="form-step__hint">Be as specific or as abstract as you like.</p>
+              <textarea class="form-textarea" name="the_pull" placeholder="I arrived here because..."></textarea>
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 5: Readiness -->
+            <div class="form-step" data-step="5">
+              <p class="form-step__question">What would need to shift in your life to make space for this kind of work over the next 4–6 weeks?</p>
+              <textarea class="form-textarea" name="readiness" placeholder="To make space, I would need to..."></textarea>
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 6: Module Interest -->
+            <div class="form-step" data-step="6">
+              <p class="form-step__question">Which module resonates most right now?</p>
+              <div class="form-radios">
+                <label class="form-radio">
+                  <input type="radio" name="module_interest" value="rooted_creation">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">
+                    Rooted Creation
+                    <span class="form-radio__sublabel">Finding what is mine</span>
+                  </span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="module_interest" value="presence_and_sound">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">
+                    Presence &amp; Sound
+                    <span class="form-radio__sublabel">Learning to stay</span>
+                  </span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="module_interest" value="artist_to_universe">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">
+                    From Artist to Universe
+                    <span class="form-radio__sublabel">Letting the work become larger</span>
+                  </span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="module_interest" value="unsure">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">
+                    I am not sure yet
+                    <span class="form-radio__sublabel">I would like guidance</span>
+                  </span>
+                </label>
+              </div>
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 7: Referral -->
+            <div class="form-step" data-step="7">
+              <p class="form-step__question">How did you find this space?</p>
+              <div class="form-radios">
+                <label class="form-radio">
+                  <input type="radio" name="referral" value="youtube">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">YouTube</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="referral" value="streaming">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">Spotify / Apple Music</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="referral" value="friend">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">A friend or collaborator</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="referral" value="social">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">Social media</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="referral" value="other">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">Something else</span>
+                </label>
+              </div>
+              <div class="spacer-md"></div>
+              <input class="form-input" type="text" name="referral_other" placeholder="If something else, how?">
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 8: Contact -->
+            <div class="form-step" data-step="8">
+              <p class="form-step__question">How should we reach you?</p>
+              <input class="form-input" type="email" name="email" placeholder="Email address" autocomplete="email">
+              <div class="spacer-xl"></div>
+              <p class="form-step__question" style="font-size: 20px;">How would you prefer to have a conversation?</p>
+              <div class="form-radios">
+                <label class="form-radio">
+                  <input type="radio" name="conversation_pref" value="video">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">Video call</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="conversation_pref" value="voice">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">Voice call</span>
+                </label>
+                <label class="form-radio">
+                  <input type="radio" name="conversation_pref" value="written">
+                  <span class="form-radio__circle"></span>
+                  <span class="form-radio__label">Written exchange</span>
+                </label>
+              </div>
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn" type="button" data-action="next">Continue</button>
+              </div>
+            </div>
+
+            <!-- Step 9: Anything Else -->
+            <div class="form-step" data-step="9">
+              <p class="form-step__question">Is there anything else you want to share before we begin?</p>
+              <p class="form-step__hint">This is optional.</p>
+              <textarea class="form-textarea" name="anything_else" placeholder=""></textarea>
+              <div class="form-nav">
+                <button class="form-back" type="button" data-action="back">Back</button>
+                <button class="btn btn--filled" type="button" data-action="submit">Submit Application</button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Confirmation -->
+          <div class="form-confirmation">
+            <hr class="divider" style="margin: 0 auto var(--space-xl);">
+            <h2>Thank you.</h2>
+            <div class="spacer-lg"></div>
+            <p>You will hear back within 7 days.</p>
+            <p>If there is alignment, we will schedule a conversation. If not, you will receive an honest and respectful reply.</p>
+            <p class="microcopy" style="margin-top: var(--space-lg);">No automated responses. Every application is read personally.</p>
+            <div class="spacer-xl"></div>
+            <a href="music.html" class="link-arrow">Return to the music</a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span class="footer__name">Eric Olivier Mario</span>
+        <div class="footer__right">
+          <ul class="footer__links">
+            <li><a href="music.html" class="footer__link">Music</a></li>
+            <li><a href="the-journey.html" class="footer__link">The Journey</a></li>
+            <li><a href="apply.html" class="footer__link">Apply</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
+          </ul>
+          <div class="footer__streaming">
+            <a href="#">Spotify</a> &nbsp;&middot;&nbsp;
+            <a href="#">Apple Music</a> &nbsp;&middot;&nbsp;
+            <a href="#">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
