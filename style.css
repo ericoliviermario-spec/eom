@@ -360,8 +360,8 @@ a:hover {
 }
 
 .nav__logo-img {
-  height: 44px;
-  width: 44px;
+  height: 72px;
+  width: 72px;
   object-fit: contain;
   border-radius: 50%;
   display: block;
