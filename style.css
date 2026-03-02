@@ -66,8 +66,8 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 300;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
   letter-spacing: 0.01em;
@@ -110,7 +110,7 @@ h3 {
 }
 
 .subheading {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: clamp(16px, 2vw, 20px);
   letter-spacing: 0.04em;
@@ -118,7 +118,7 @@ h3 {
 }
 
 .label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -196,7 +196,7 @@ a:hover {
 /* --- Buttons --- */
 .btn {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 13px;
   letter-spacing: 0.12em;
@@ -245,7 +245,7 @@ a:hover {
 
 .form-error {
   margin-top: var(--space-md);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
   color: #c46a6a;
   letter-spacing: 0.03em;
@@ -255,7 +255,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.06em;
@@ -374,7 +374,7 @@ a:hover {
 }
 
 .nav__link {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -469,7 +469,7 @@ a:hover {
 }
 
 .footer__name {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 13px;
   letter-spacing: 0.06em;
@@ -490,7 +490,7 @@ a:hover {
 }
 
 .footer__link {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -559,7 +559,7 @@ a:hover {
 }
 
 .hero__title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: clamp(14px, 2vw, 16px);
   letter-spacing: 0.2em;
@@ -618,7 +618,7 @@ a:hover {
 }
 
 .pathway__label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -746,7 +746,7 @@ a:hover {
 }
 
 .arc__node-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 11px;
   letter-spacing: 0.06em;
@@ -926,7 +926,7 @@ a:hover {
 .chapter--6 { background: var(--horizon-warm-subtle); }
 
 .chapter__numeral {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.12em;
@@ -976,7 +976,7 @@ a:hover {
 }
 
 .chapter__track-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 15px;
   color: var(--text-primary);
@@ -1100,7 +1100,7 @@ a:hover {
 }
 
 .audio-player__time {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 11px;
   color: var(--text-muted);
   flex-shrink: 0;
@@ -1193,7 +1193,7 @@ a:hover {
 }
 
 .module-card__transform {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 14px;
   color: var(--text-primary);
@@ -1325,7 +1325,7 @@ a:hover {
 }
 
 .transformation__col h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -1358,7 +1358,7 @@ a:hover {
 }
 
 .weeks__title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -1377,7 +1377,7 @@ a:hover {
 }
 
 .week__label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 13px;
   color: var(--text-primary);
@@ -1421,7 +1421,7 @@ a:hover {
 }
 
 .container-section__item-label {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 11px;
   letter-spacing: 0.1em;
@@ -1562,7 +1562,7 @@ a:hover {
   border: none;
   border-bottom: 1px solid var(--border-subtle);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
   font-size: 16px;
   padding: 12px 0;
@@ -1663,7 +1663,7 @@ a:hover {
 }
 
 .form-back {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
   color: var(--text-muted);
   background: none;
