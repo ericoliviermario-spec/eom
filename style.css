@@ -544,7 +544,7 @@ a:hover {
   object-fit: cover;
   object-position: center 20%;
   z-index: 0;
-  filter: grayscale(25%) brightness(0.45);
+  filter: grayscale(15%) brightness(0.72);
 }
 
 .hero::before {
@@ -553,9 +553,9 @@ a:hover {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(14, 12, 11, 0.2) 0%,
-    rgba(14, 12, 11, 0.5) 50%,
-    rgba(14, 12, 11, 0.85) 100%
+    rgba(14, 12, 11, 0.05) 0%,
+    rgba(14, 12, 11, 0.25) 50%,
+    rgba(14, 12, 11, 0.65) 100%
   );
   pointer-events: none;
   z-index: 1;
