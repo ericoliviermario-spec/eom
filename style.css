@@ -189,6 +189,7 @@ a:hover {
 
 .container--narrow {
   max-width: var(--width-narrow);
+  margin: 0 auto;
 }
 
 .text-center { text-align: center; }
