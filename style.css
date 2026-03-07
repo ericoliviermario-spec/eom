@@ -1233,7 +1233,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('journey-hero-bg.jpg') center center / cover no-repeat;
+  background: url('section-bg.jpg') center center / cover no-repeat;
   padding: var(--space-md);
   position: relative;
 }
@@ -1435,7 +1435,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('module-hero-bg.jpg') center 30% / 120% auto no-repeat;
+  background: url('section-bg.jpg') center center / cover no-repeat;
   padding: var(--space-md);
   position: relative;
 }
@@ -1602,7 +1602,7 @@ a:hover {
 /* Investment */
 .investment {
   padding: var(--space-5xl) var(--space-md);
-  background: url('module-hero-bg.jpg') center 30% / 120% auto no-repeat;
+  background: url('section-bg.jpg') center center / cover no-repeat;
   text-align: center;
   position: relative;
 }
