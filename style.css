@@ -1414,8 +1414,28 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--horizon-warm);
+  background: url('module-hero-bg.jpg') center center / cover no-repeat;
   padding: var(--space-md);
+  position: relative;
+}
+
+.module-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.module-hero .label,
+.module-hero h1,
+.module-hero .microcopy {
+  color: #1a1a1a;
+}
+
+.module-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .module-hero .label {
