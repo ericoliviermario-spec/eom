@@ -1581,20 +1581,47 @@ a:hover {
 /* Investment */
 .investment {
   padding: var(--space-5xl) var(--space-md);
-  background: var(--horizon-warm-subtle);
+  background: url('module-hero-bg.jpg') center center / cover no-repeat;
   text-align: center;
+  position: relative;
+}
+
+.investment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.investment > * {
+  position: relative;
+  z-index: 1;
+}
+
+.investment .label {
+  color: #1a1a1a;
 }
 
 .investment p {
-  color: var(--text-secondary);
+  color: #3a3a3a;
   font-size: 19px;
   line-height: 1.8;
   max-width: 420px;
   margin: 0 auto var(--space-lg);
 }
 
+.investment p span {
+  color: #5a5a5a;
+}
+
 .investment .microcopy {
   margin-bottom: var(--space-xl);
+}
+
+.investment .btn {
+  color: #1a1a1a;
+  border-color: #1a1a1a;
 }
 
 /* ============================================================
