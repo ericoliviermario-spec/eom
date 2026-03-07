@@ -1233,8 +1233,28 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--horizon-warm);
+  background: url('journey-hero-bg.jpg') center center / cover no-repeat;
   padding: var(--space-md);
+  position: relative;
+}
+
+.journey-entrance::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.journey-entrance > * {
+  position: relative;
+  z-index: 1;
+}
+
+.journey-entrance .label,
+.journey-entrance h1,
+.journey-entrance .microcopy {
+  color: #1a1a1a;
 }
 
 .journey-entrance h1 {
