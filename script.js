@@ -96,7 +96,7 @@ function initScrollReveal() {
 }
 
 /* ============================================================
-   ARC — VISUAL BEZIER ARC WITH SOUNDCLOUD WIDGET PLAYER
+   ARC — VISUAL BEZIER ARC WITH SOUNDCLOUD EMBED
    ============================================================ */
 function initArcChapters() {
   const chBtns      = document.querySelectorAll('.arc__ch');
@@ -104,82 +104,20 @@ function initArcChapters() {
   const scIframe    = document.getElementById('sc-player');
   if (!chBtns.length || !panel || !scIframe) return;
 
-  if (typeof SC === 'undefined') {
-    window.addEventListener('load', initArcChapters, { once: true });
-    return;
-  }
-
   const panelMvEl    = document.getElementById('arc-panel-mv');
   const panelNumEl   = document.getElementById('arc-panel-num');
   const panelTitleEl = document.getElementById('arc-panel-title');
-  const playBtn      = document.getElementById('arc-play-btn');
-  const playIcon     = playBtn ? playBtn.querySelector('.arc__play-icon')  : null;
-  const pauseIcon    = playBtn ? playBtn.querySelector('.arc__pause-icon') : null;
-  const progressFill = document.getElementById('arc-progress-fill');
-  const progressWrap = document.getElementById('arc-progress-wrap');
-  const timeEl       = document.getElementById('arc-time');
 
-  let currentBtn  = null;
-  let isPlaying   = false;
-  let widget      = null;
-  let widgetReady = false;
+  let currentBtn = null;
 
-  function fmt(ms) {
-    const s = Math.floor(ms / 1000);
-    const m = Math.floor(s / 60);
-    return `${m}:${(s % 60).toString().padStart(2, '0')}`;
-  }
-
-  function setPlaying(val) {
-    isPlaying = val;
-    if (playIcon)  playIcon.style.display  = val ? 'none' : 'block';
-    if (pauseIcon) pauseIcon.style.display = val ? 'block' : 'none';
-    if (playBtn)   playBtn.setAttribute('aria-label', val ? 'Pause' : 'Play');
-  }
-
-  function loadTrack(src) {
-    widgetReady = false;
-    setPlaying(false);
-
-    const playerUrl = 'https://w.soundcloud.com/player/?url='
-      + encodeURIComponent(src)
-      + '&auto_play=true&hide_related=true&show_comments=false'
-      + '&show_user=false&show_reposts=false&show_teaser=false'
-      + '&buying=false&liking=false&download=false&sharing=false';
-
-    scIframe.src = playerUrl;
-    widget = SC.Widget(scIframe);
-
-    // Wait for the widget to be ready before binding playback events
-    widget.bind(SC.Widget.Events.READY, () => {
-      widgetReady = true;
-      widget.bind(SC.Widget.Events.PLAY, () => setPlaying(true));
-      widget.bind(SC.Widget.Events.PAUSE, () => setPlaying(false));
-      widget.bind(SC.Widget.Events.FINISH, () => {
-        setPlaying(false);
-        if (progressFill) progressFill.style.width = '0%';
-        if (timeEl) timeEl.textContent = '0:00';
-      });
-      widget.bind(SC.Widget.Events.PLAY_PROGRESS, e => {
-        if (progressFill) progressFill.style.width = (e.relativePosition * 100) + '%';
-        if (timeEl) timeEl.textContent = fmt(e.currentPosition);
-      });
-    });
-  }
-
-  // Chapter node click
   chBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const wasActive = btn.getAttribute('aria-pressed') === 'true';
 
-      if (widget && widgetReady) { try { widget.pause(); } catch(e) {} }
-      setPlaying(false);
-      if (progressFill) progressFill.style.width = '0%';
-      if (timeEl) timeEl.textContent = '0:00';
-
       if (wasActive) {
         btn.setAttribute('aria-pressed', 'false');
         panel.classList.remove('is-open');
+        scIframe.src = 'about:blank';
         currentBtn = null;
         return;
       }
@@ -191,30 +129,16 @@ function initArcChapters() {
       if (panelMvEl)    panelMvEl.textContent   = btn.dataset.mv    || '';
       if (panelNumEl)   panelNumEl.textContent   = btn.dataset.num   || '—';
       if (panelTitleEl) panelTitleEl.textContent = btn.dataset.title || '';
-      if (playBtn)      playBtn.disabled = false;
       panel.classList.add('is-open');
 
-      loadTrack(btn.dataset.src);
+      // Load the SoundCloud embed — SC handles play/pause/progress
+      scIframe.src = 'https://w.soundcloud.com/player/?url='
+        + encodeURIComponent(btn.dataset.src)
+        + '&color=%23C07838&auto_play=true&hide_related=true&show_comments=false'
+        + '&show_user=false&show_reposts=false&show_teaser=false'
+        + '&buying=false&liking=false&download=false&sharing=false';
     });
   });
-
-  // Play / Pause button
-  if (playBtn) {
-    playBtn.addEventListener('click', () => {
-      if (!currentBtn || !widget || !widgetReady) return;
-      if (isPlaying) { widget.pause(); } else { widget.play(); }
-    });
-  }
-
-  // Progress bar seek
-  if (progressWrap) {
-    progressWrap.addEventListener('click', e => {
-      if (!currentBtn || !widget || !widgetReady) return;
-      const rect = progressWrap.getBoundingClientRect();
-      const pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-      widget.getDuration(duration => { widget.seekTo(pct * duration); });
-    });
-  }
 }
 
 /* ============================================================

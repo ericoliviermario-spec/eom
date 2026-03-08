@@ -921,26 +921,22 @@ a:hover {
 }
 
 .arc__panel.is-open {
-  max-height: 140px;
+  max-height: 200px;
   opacity: 1;
 }
 
-.arc__panel-inner {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 6px;
-  padding: var(--space-md) var(--space-lg);
-  background: rgba(255,255,255,0.02);
-}
-
 .arc__panel-info {
-  min-width: 120px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex-shrink: 0;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.arc__sc-embed {
+  width: 100%;
+  height: 20px;
+  border: none;
+  display: block;
 }
 
 .arc__panel-mv {
