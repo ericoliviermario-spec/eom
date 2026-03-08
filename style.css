@@ -888,7 +888,7 @@ a:hover {
 
 .arc__mv-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -902,7 +902,7 @@ a:hover {
   font-style: italic;
   text-transform: none;
   letter-spacing: 0.02em;
-  font-size: 13px;
+  font-size: 18px;
   margin-top: 2px;
   color: var(--text-secondary);
 }
