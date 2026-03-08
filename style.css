@@ -1655,7 +1655,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--horizon-warm-subtle);
+  background: url('apply-hero-bg.jpg') center center / cover no-repeat;
   padding: var(--space-5xl) var(--space-md);
 }
 
