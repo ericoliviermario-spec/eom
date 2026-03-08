@@ -11,20 +11,31 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .about-hero {
-      background: linear-gradient(180deg, #1A1A1A 0%, #1E1A18 40%, #231D1A 70%, #2A1E18 100%);
+      background: url('about-hero-bg.jpg') center center / cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: var(--space-5xl);
     }
-    .about-photo-hint {
+    .about-hero::before {
+      content: '';
       position: absolute;
-      bottom: var(--space-md);
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'Inter', sans-serif;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+      pointer-events: none;
+    }
+    .about-hero__title {
+      position: relative;
+      z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      white-space: nowrap;
+      font-size: clamp(28px, 5vw, 52px);
+      color: #E8E0D4;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.2;
+      padding: 0 var(--space-md);
     }
   </style>
 </head>
@@ -59,8 +70,7 @@
 
       <!-- Hero Image -->
       <section class="about-hero" aria-label="Artist portrait">
-        <p class="about-hero__placeholder">Photograph</p>
-        <p class="about-photo-hint">Eric Olivier Mario</p>
+        <h1 class="about-hero__title">A producer who's been exactly where you are</h1>
       </section>
 
       <!-- Bio -->
