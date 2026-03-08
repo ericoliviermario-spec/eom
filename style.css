@@ -921,7 +921,7 @@ a:hover {
 }
 
 .arc__panel.is-open {
-  max-height: 200px;
+  max-height: 300px;
   opacity: 1;
 }
 
@@ -934,9 +934,10 @@ a:hover {
 
 .arc__sc-embed {
   width: 100%;
-  height: 20px;
+  height: 166px;
   border: none;
   display: block;
+  border-radius: 4px;
 }
 
 .arc__panel-mv {

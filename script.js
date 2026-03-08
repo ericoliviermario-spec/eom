@@ -131,9 +131,16 @@ function initArcChapters() {
       if (panelTitleEl) panelTitleEl.textContent = btn.dataset.title || '';
       panel.classList.add('is-open');
 
+      // Parse private sharing URL: split track URL from secret token
+      const src = btn.dataset.src;
+      const tokenMatch = src.match(/\/(s-[a-zA-Z0-9]+)$/);
+      const trackUrl = tokenMatch ? src.replace(/\/s-[a-zA-Z0-9]+$/, '') : src;
+      const secretParam = tokenMatch ? '&secret_token=' + tokenMatch[1] : '';
+
       // Load the SoundCloud embed — SC handles play/pause/progress
       scIframe.src = 'https://w.soundcloud.com/player/?url='
-        + encodeURIComponent(btn.dataset.src)
+        + encodeURIComponent(trackUrl)
+        + secretParam
         + '&color=%23C07838&auto_play=true&hide_related=true&show_comments=false'
         + '&show_user=false&show_reposts=false&show_teaser=false'
         + '&buying=false&liking=false&download=false&sharing=false';
