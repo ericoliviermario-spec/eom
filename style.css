@@ -744,6 +744,11 @@ a:hover {
   margin-bottom: var(--space-3xl);
 }
 
+.arc__label .label {
+  font-size: clamp(24px, 3.5vw, 32px);
+  font-weight: 300;
+}
+
 /* Scene wrap: constrains width and holds scene + mv labels */
 .arc__scene-wrap {
   max-width: 860px;
