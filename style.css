@@ -745,7 +745,7 @@ a:hover {
 }
 
 .arc__label .label {
-  font-size: clamp(24px, 3.5vw, 32px);
+  font-size: 30px;
   font-weight: 300;
 }
 
