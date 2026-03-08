@@ -173,6 +173,33 @@
               <span class="arc__num">9</span>
             </button>
 
+          <!-- Player panel centered in the arc bowl -->
+          <div class="arc__panel" id="arc-panel">
+            <div class="arc__panel-inner">
+              <div class="arc__panel-info">
+                <span class="arc__panel-mv" id="arc-panel-mv"></span>
+                <span class="arc__panel-num" id="arc-panel-num">—</span>
+                <span class="arc__panel-title" id="arc-panel-title">Select a chapter</span>
+              </div>
+              <div class="arc__panel-player">
+                <button class="arc__play-btn" id="arc-play-btn" aria-label="Play" disabled>
+                  <svg class="arc__play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  <svg class="arc__pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                  </svg>
+                </button>
+                <div class="arc__progress-wrap" id="arc-progress-wrap">
+                  <div class="arc__progress-track">
+                    <div class="arc__progress-fill" id="arc-progress-fill"></div>
+                  </div>
+                </div>
+                <span class="arc__time" id="arc-time">0:00</span>
+              </div>
+            </div>
+          </div>
+
           </div><!-- /.arc__scene -->
 
           <!-- Movement labels beneath the arc -->
@@ -183,33 +210,6 @@
           </div>
         </div><!-- /.arc__scene-wrap -->
 
-        <!-- Shared info + player panel -->
-        <div class="arc__panel" id="arc-panel">
-          <div class="arc__panel-inner">
-            <div class="arc__panel-info">
-              <span class="arc__panel-mv" id="arc-panel-mv"></span>
-              <span class="arc__panel-num" id="arc-panel-num">—</span>
-              <span class="arc__panel-title" id="arc-panel-title">Select a chapter</span>
-            </div>
-            <div class="arc__panel-player">
-              <button class="arc__play-btn" id="arc-play-btn" aria-label="Play" disabled>
-                <svg class="arc__play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-                <svg class="arc__pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                </svg>
-              </button>
-              <div class="arc__progress-wrap" id="arc-progress-wrap">
-                <div class="arc__progress-track">
-                  <div class="arc__progress-fill" id="arc-progress-fill"></div>
-                </div>
-              </div>
-              <span class="arc__time" id="arc-time">0:00</span>
-            </div>
-          </div>
-        </div>
-
         <div class="arc__footer">
           <p class="microcopy">
             From C minor to D major.<br>
@@ -219,7 +219,7 @@
 
         <iframe id="sc-player"
           src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ericoliviermario&auto_play=false"
-          style="display:none" allow="autoplay"></iframe>
+          style="position:absolute;width:1px;height:1px;left:-9999px;top:0" allow="autoplay"></iframe>
       </section>
 
       <!-- Positioning Statement -->

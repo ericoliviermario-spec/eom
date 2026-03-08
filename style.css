@@ -905,10 +905,15 @@ a:hover {
 .arc__mv-label--center { text-align: center; }
 .arc__mv-label--right  { text-align: right; }
 
-/* Shared info + player panel */
+/* Shared info + player panel — centered inside arc scene */
 .arc__panel {
-  max-width: 520px;
-  margin: var(--space-xl) auto var(--space-sm);
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translateX(-50%);
+  width: 72%;
+  max-width: 460px;
+  z-index: 2;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
@@ -916,7 +921,7 @@ a:hover {
 }
 
 .arc__panel.is-open {
-  max-height: 130px;
+  max-height: 140px;
   opacity: 1;
 }
 

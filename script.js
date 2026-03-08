@@ -102,7 +102,13 @@ function initArcChapters() {
   const chBtns      = document.querySelectorAll('.arc__ch');
   const panel       = document.getElementById('arc-panel');
   const scIframe    = document.getElementById('sc-player');
-  if (!chBtns.length || !panel || !scIframe || typeof SC === 'undefined') return;
+  if (!chBtns.length || !panel || !scIframe) return;
+
+  // If SC API not yet available, retry after page load
+  if (typeof SC === 'undefined') {
+    window.addEventListener('load', initArcChapters, { once: true });
+    return;
+  }
 
   const panelMvEl    = document.getElementById('arc-panel-mv');
   const panelNumEl   = document.getElementById('arc-panel-num');
@@ -117,6 +123,16 @@ function initArcChapters() {
   const widget     = SC.Widget(scIframe);
   let currentBtn   = null;
   let isPlaying    = false;
+  let widgetReady  = false;
+  let pendingSrc   = null;
+
+  widget.bind(SC.Widget.Events.READY, () => {
+    widgetReady = true;
+    if (pendingSrc) {
+      widget.load(pendingSrc, { auto_play: true, hide_related: true, show_comments: false, show_user: false, show_reposts: false, show_teaser: false });
+      pendingSrc = null;
+    }
+  });
 
   function fmt(ms) {
     const s = Math.floor(ms / 1000);
@@ -172,15 +188,13 @@ function initArcChapters() {
 
       panel.classList.add('is-open');
 
-      // Load the track (auto_play starts it immediately)
-      widget.load(btn.dataset.src, {
-        auto_play: true,
-        hide_related: true,
-        show_comments: false,
-        show_user: false,
-        show_reposts: false,
-        show_teaser: false
-      });
+      // Load the track (queue if widget not ready yet)
+      const loadOpts = { auto_play: true, hide_related: true, show_comments: false, show_user: false, show_reposts: false, show_teaser: false };
+      if (widgetReady) {
+        widget.load(btn.dataset.src, loadOpts);
+      } else {
+        pendingSrc = btn.dataset.src;
+      }
     });
   });
 
