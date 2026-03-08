@@ -572,6 +572,8 @@ a:hover {
 .hero__content {
   position: relative;
   z-index: 2;
+  width: 100%;
+  text-align: center;
 }
 
 .hero__divider {
@@ -589,6 +591,7 @@ a:hover {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #1e1610;
+  text-align: center;
   margin-bottom: var(--space-lg);
 }
 
@@ -599,7 +602,8 @@ a:hover {
   letter-spacing: 0.02em;
   color: #3a2e22;
   line-height: 1.6;
-  margin-bottom: var(--space-xl);
+  text-align: center;
+  margin: 0 auto var(--space-xl);
 }
 
 .hero .btn {
