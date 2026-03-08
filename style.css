@@ -1044,6 +1044,8 @@ a:hover {
 
 .arc__footer .microcopy {
   line-height: 1.8;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Responsive */
