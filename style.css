@@ -956,8 +956,20 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--horizon-cool);
+  background: url('music-entrance-bg.jpg') center center / cover no-repeat;
+  position: relative;
   padding: var(--space-md);
+}
+.music-entrance::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+.music-entrance > * {
+  position: relative;
+  z-index: 1;
 }
 
 .music-entrance__arrow {
