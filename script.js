@@ -119,9 +119,10 @@ function initArcChapters() {
   const progressWrap = document.getElementById('arc-progress-wrap');
   const timeEl       = document.getElementById('arc-time');
 
-  let currentBtn = null;
-  let isPlaying  = false;
-  let widget     = null;
+  let currentBtn  = null;
+  let isPlaying   = false;
+  let widget      = null;
+  let widgetReady = false;
 
   function fmt(ms) {
     const s = Math.floor(ms / 1000);
@@ -136,30 +137,42 @@ function initArcChapters() {
     if (playBtn)   playBtn.setAttribute('aria-label', val ? 'Pause' : 'Play');
   }
 
-  function bindWidget() {
+  function loadTrack(src) {
+    widgetReady = false;
+    setPlaying(false);
+
+    const playerUrl = 'https://w.soundcloud.com/player/?url='
+      + encodeURIComponent(src)
+      + '&auto_play=true&hide_related=true&show_comments=false'
+      + '&show_user=false&show_reposts=false&show_teaser=false'
+      + '&buying=false&liking=false&download=false&sharing=false';
+
+    scIframe.src = playerUrl;
     widget = SC.Widget(scIframe);
-    widget.bind(SC.Widget.Events.PLAY,  () => setPlaying(true));
-    widget.bind(SC.Widget.Events.PAUSE, () => setPlaying(false));
-    widget.bind(SC.Widget.Events.FINISH, () => {
-      setPlaying(false);
-      if (progressFill) progressFill.style.width = '0%';
-      if (timeEl) timeEl.textContent = '0:00';
-    });
-    widget.bind(SC.Widget.Events.PLAY_PROGRESS, e => {
-      if (progressFill) progressFill.style.width = (e.relativePosition * 100) + '%';
-      if (timeEl) timeEl.textContent = fmt(e.currentPosition);
+
+    // Wait for the widget to be ready before binding playback events
+    widget.bind(SC.Widget.Events.READY, () => {
+      widgetReady = true;
+      widget.bind(SC.Widget.Events.PLAY, () => setPlaying(true));
+      widget.bind(SC.Widget.Events.PAUSE, () => setPlaying(false));
+      widget.bind(SC.Widget.Events.FINISH, () => {
+        setPlaying(false);
+        if (progressFill) progressFill.style.width = '0%';
+        if (timeEl) timeEl.textContent = '0:00';
+      });
+      widget.bind(SC.Widget.Events.PLAY_PROGRESS, e => {
+        if (progressFill) progressFill.style.width = (e.relativePosition * 100) + '%';
+        if (timeEl) timeEl.textContent = fmt(e.currentPosition);
+      });
     });
   }
-
-  bindWidget();
 
   // Chapter node click
   chBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const wasActive = btn.getAttribute('aria-pressed') === 'true';
 
-      // Stop current playback
-      if (widget) { try { widget.pause(); } catch(e) {} }
+      if (widget && widgetReady) { try { widget.pause(); } catch(e) {} }
       setPlaying(false);
       if (progressFill) progressFill.style.width = '0%';
       if (timeEl) timeEl.textContent = '0:00';
@@ -181,21 +194,14 @@ function initArcChapters() {
       if (playBtn)      playBtn.disabled = false;
       panel.classList.add('is-open');
 
-      // Navigate iframe to the track — most reliable method for private tracks
-      const playerUrl = 'https://w.soundcloud.com/player/?url='
-        + encodeURIComponent(btn.dataset.src)
-        + '&auto_play=true&hide_related=true&show_comments=false'
-        + '&show_user=false&show_reposts=false&show_teaser=false'
-        + '&buying=false&liking=false&download=false&sharing=false';
-      scIframe.src = playerUrl;
-      bindWidget();
+      loadTrack(btn.dataset.src);
     });
   });
 
   // Play / Pause button
   if (playBtn) {
     playBtn.addEventListener('click', () => {
-      if (!currentBtn || !widget) return;
+      if (!currentBtn || !widget || !widgetReady) return;
       if (isPlaying) { widget.pause(); } else { widget.play(); }
     });
   }
@@ -203,7 +209,7 @@ function initArcChapters() {
   // Progress bar seek
   if (progressWrap) {
     progressWrap.addEventListener('click', e => {
-      if (!currentBtn || !widget) return;
+      if (!currentBtn || !widget || !widgetReady) return;
       const rect = progressWrap.getBoundingClientRect();
       const pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
       widget.getDuration(duration => { widget.seekTo(pct * duration); });
