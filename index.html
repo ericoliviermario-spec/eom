@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://w.soundcloud.com/player/api.js"></script>
 </head>
 <body class="home-page">
 
@@ -91,185 +92,122 @@
           <span class="label">The Arc</span>
         </div>
 
-        <div class="arc__movements">
+        <!-- Visual arc scene -->
+        <div class="arc__scene-wrap">
+          <div class="arc__scene">
 
-          <!-- Movement I: The Descent Beneath -->
-          <div class="arc__movement-group">
-            <p class="arc__movement-label">Movement I<em>The Descent Beneath</em></p>
-            <div class="arc__chapters">
+            <!-- Gradient arc path -->
+            <svg class="arc__svg" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <linearGradient id="arc-grad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%"   stop-color="#0B1828"/>
+                  <stop offset="22%"  stop-color="#1A3558"/>
+                  <stop offset="50%"  stop-color="#6A7A8A"/>
+                  <stop offset="78%"  stop-color="#C07838"/>
+                  <stop offset="100%" stop-color="#8C2E14"/>
+                </linearGradient>
+              </defs>
+              <path d="M 50 480 C 50 40 850 40 850 480" stroke="url(#arc-grad)" stroke-width="2" fill="none"/>
+            </svg>
 
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-1">
-                  <span class="arc__num">1</span>
-                  <span class="arc__chapter-title">First Light</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-1">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
+            <!-- Chapter 1 — First Light -->
+            <button class="arc__ch arc__ch--1" aria-pressed="false"
+                    data-num="1" data-title="First Light" data-mv="Movement I"
+                    data-src="https://soundcloud.com/ericoliviermario/1-latency/s-1KiDu1WSPrn">
+              <span class="arc__num">1</span>
+            </button>
+
+            <!-- Chapter 2 — Liminal -->
+            <button class="arc__ch arc__ch--2" aria-pressed="false"
+                    data-num="2" data-title="Liminal" data-mv="Movement I"
+                    data-src="https://soundcloud.com/ericoliviermario/liminal/s-EMBTPrhCDu7">
+              <span class="arc__num">2</span>
+            </button>
+
+            <!-- Chapter 3 — Unfolding -->
+            <button class="arc__ch arc__ch--3" aria-pressed="false"
+                    data-num="3" data-title="Unfolding" data-mv="Movement I"
+                    data-src="https://soundcloud.com/ericoliviermario/unfolding/s-MwCIwmgEfFV">
+              <span class="arc__num">3</span>
+            </button>
+
+            <!-- Chapter 4 — First Light -->
+            <button class="arc__ch arc__ch--4" aria-pressed="false"
+                    data-num="4" data-title="First Light" data-mv="Movement II"
+                    data-src="https://soundcloud.com/ericoliviermario/nawani/s-Dlw7G3OwCGB">
+              <span class="arc__num">4</span>
+            </button>
+
+            <!-- Chapter 5 — Awakened -->
+            <button class="arc__ch arc__ch--5" aria-pressed="false"
+                    data-num="5" data-title="Awakened" data-mv="Movement II"
+                    data-src="https://soundcloud.com/ericoliviermario/enough/s-JcM4C5hDUmV">
+              <span class="arc__num">5</span>
+            </button>
+
+            <!-- Chapter 6 — Open Ground -->
+            <button class="arc__ch arc__ch--6" aria-pressed="false"
+                    data-num="6" data-title="Open Ground" data-mv="Movement II"
+                    data-src="https://soundcloud.com/ericoliviermario/steady/s-ModenI1uPTB">
+              <span class="arc__num">6</span>
+            </button>
+
+            <!-- Chapter 7 — Becoming -->
+            <button class="arc__ch arc__ch--7" aria-pressed="false"
+                    data-num="7" data-title="Becoming" data-mv="Movement III"
+                    data-src="https://soundcloud.com/ericoliviermario/presence/s-Aa6ngjMOCjD">
+              <span class="arc__num">7</span>
+            </button>
+
+            <!-- Chapter 8 — Human -->
+            <button class="arc__ch arc__ch--8" aria-pressed="false"
+                    data-num="8" data-title="Human" data-mv="Movement III"
+                    data-src="https://soundcloud.com/ericoliviermario/human-1/s-g2l7DOYtajI">
+              <span class="arc__num">8</span>
+            </button>
+
+            <!-- Chapter 9 — Beloved -->
+            <button class="arc__ch arc__ch--9" aria-pressed="false"
+                    data-num="9" data-title="Beloved" data-mv="Movement III"
+                    data-src="https://soundcloud.com/ericoliviermario/8-beloved/s-NezvXIysW64">
+              <span class="arc__num">9</span>
+            </button>
+
+          </div><!-- /.arc__scene -->
+
+          <!-- Movement labels beneath the arc -->
+          <div class="arc__mv-labels" aria-hidden="true">
+            <span class="arc__mv-label">Movement I<em>The Descent Beneath</em></span>
+            <span class="arc__mv-label arc__mv-label--center">Movement II<em>The Threshold Continuum</em></span>
+            <span class="arc__mv-label arc__mv-label--right">Movement III<em>The Return Release</em></span>
+          </div>
+        </div><!-- /.arc__scene-wrap -->
+
+        <!-- Shared info + player panel -->
+        <div class="arc__panel" id="arc-panel">
+          <div class="arc__panel-inner">
+            <div class="arc__panel-info">
+              <span class="arc__panel-mv" id="arc-panel-mv"></span>
+              <span class="arc__panel-num" id="arc-panel-num">—</span>
+              <span class="arc__panel-title" id="arc-panel-title">Select a chapter</span>
+            </div>
+            <div class="arc__panel-player">
+              <button class="arc__play-btn" id="arc-play-btn" aria-label="Play" disabled>
+                <svg class="arc__play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="arc__pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+              </button>
+              <div class="arc__progress-wrap" id="arc-progress-wrap">
+                <div class="arc__progress-track">
+                  <div class="arc__progress-fill" id="arc-progress-fill"></div>
                 </div>
               </div>
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-2">
-                  <span class="arc__num">2</span>
-                  <span class="arc__chapter-title">The Pull</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-2">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-3">
-                  <span class="arc__num">3</span>
-                  <span class="arc__chapter-title">Unfolding</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-3">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
+              <span class="arc__time" id="arc-time">0:00</span>
             </div>
           </div>
-
-          <!-- Movement II: The Threshold Continuum -->
-          <div class="arc__movement-group">
-            <p class="arc__movement-label">Movement II<em>The Threshold Continuum</em></p>
-            <div class="arc__chapters">
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-4">
-                  <span class="arc__num">4</span>
-                  <span class="arc__chapter-title">First Light</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-4">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-5">
-                  <span class="arc__num">5</span>
-                  <span class="arc__chapter-title">Awakened</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-5">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-6">
-                  <span class="arc__num">6</span>
-                  <span class="arc__chapter-title">Open Ground</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-6">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Movement III: The Return Release -->
-          <div class="arc__movement-group">
-            <p class="arc__movement-label">Movement III<em>The Return Release</em></p>
-            <div class="arc__chapters">
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-7">
-                  <span class="arc__num">7</span>
-                  <span class="arc__chapter-title">Becoming</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-7">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-8">
-                  <span class="arc__num">8</span>
-                  <span class="arc__chapter-title">Presence</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-8">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="arc__chapter">
-                <button class="arc__chapter-btn" aria-expanded="false" aria-controls="arc-player-9">
-                  <span class="arc__num">9</span>
-                  <span class="arc__chapter-title">Beloved</span>
-                </button>
-                <div class="arc__player-panel" id="arc-player-9">
-                  <div class="audio-player" data-src="">
-                    <button class="audio-player__btn" aria-label="Play">
-                      <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
-                      <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <div class="audio-player__progress-wrap"><div class="audio-player__progress-bar"><div class="audio-player__progress-fill"></div></div></div>
-                    <span class="audio-player__time">0:00</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
         </div>
 
         <div class="arc__footer">
@@ -278,6 +216,10 @@
             From darkness held — to light arrived.
           </p>
         </div>
+
+        <iframe id="sc-player"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ericoliviermario&auto_play=false"
+          style="display:none" allow="autoplay"></iframe>
       </section>
 
       <!-- Positioning Statement -->

@@ -96,34 +96,113 @@ function initScrollReveal() {
 }
 
 /* ============================================================
-   ARC TIMELINE ANIMATION
+   ARC — VISUAL BEZIER ARC WITH SOUNDCLOUD WIDGET PLAYER
    ============================================================ */
 function initArcChapters() {
-  const chapterBtns = document.querySelectorAll('.arc__chapter-btn');
-  if (!chapterBtns.length) return;
+  const chBtns      = document.querySelectorAll('.arc__ch');
+  const panel       = document.getElementById('arc-panel');
+  const scIframe    = document.getElementById('sc-player');
+  if (!chBtns.length || !panel || !scIframe || typeof SC === 'undefined') return;
 
-  chapterBtns.forEach(btn => {
+  const panelMvEl    = document.getElementById('arc-panel-mv');
+  const panelNumEl   = document.getElementById('arc-panel-num');
+  const panelTitleEl = document.getElementById('arc-panel-title');
+  const playBtn      = document.getElementById('arc-play-btn');
+  const playIcon     = playBtn ? playBtn.querySelector('.arc__play-icon')  : null;
+  const pauseIcon    = playBtn ? playBtn.querySelector('.arc__pause-icon') : null;
+  const progressFill = document.getElementById('arc-progress-fill');
+  const progressWrap = document.getElementById('arc-progress-wrap');
+  const timeEl       = document.getElementById('arc-time');
+
+  const widget     = SC.Widget(scIframe);
+  let currentBtn   = null;
+  let isPlaying    = false;
+
+  function fmt(ms) {
+    const s = Math.floor(ms / 1000);
+    const m = Math.floor(s / 60);
+    return `${m}:${(s % 60).toString().padStart(2, '0')}`;
+  }
+
+  function setPlaying(val) {
+    isPlaying = val;
+    if (playIcon)  playIcon.style.display  = val ? 'none' : 'block';
+    if (pauseIcon) pauseIcon.style.display = val ? 'block' : 'none';
+    if (playBtn)   playBtn.setAttribute('aria-label', val ? 'Pause' : 'Play');
+  }
+
+  // SoundCloud Widget events
+  widget.bind(SC.Widget.Events.PLAY, () => setPlaying(true));
+  widget.bind(SC.Widget.Events.PAUSE, () => setPlaying(false));
+  widget.bind(SC.Widget.Events.FINISH, () => {
+    setPlaying(false);
+    if (progressFill) progressFill.style.width = '0%';
+    if (timeEl) timeEl.textContent = '0:00';
+  });
+  widget.bind(SC.Widget.Events.PLAY_PROGRESS, e => {
+    if (progressFill) progressFill.style.width = (e.relativePosition * 100) + '%';
+    if (timeEl) timeEl.textContent = fmt(e.currentPosition);
+  });
+
+  // Chapter node click
+  chBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      const panelId = btn.getAttribute('aria-controls');
-      const panel = document.getElementById(panelId);
+      const wasActive = btn.getAttribute('aria-pressed') === 'true';
 
-      // Close all other panels
-      chapterBtns.forEach(otherBtn => {
-        if (otherBtn !== btn) {
-          otherBtn.setAttribute('aria-expanded', 'false');
-          const otherPanelId = otherBtn.getAttribute('aria-controls');
-          const otherPanel = document.getElementById(otherPanelId);
-          if (otherPanel) otherPanel.classList.remove('is-open');
-        }
+      widget.pause();
+      setPlaying(false);
+      if (progressFill) progressFill.style.width = '0%';
+      if (timeEl) timeEl.textContent = '0:00';
+
+      if (wasActive) {
+        btn.setAttribute('aria-pressed', 'false');
+        panel.classList.remove('is-open');
+        currentBtn = null;
+        return;
+      }
+
+      chBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      currentBtn = btn;
+
+      if (panelMvEl)    panelMvEl.textContent   = btn.dataset.mv    || '';
+      if (panelNumEl)   panelNumEl.textContent   = btn.dataset.num   || '—';
+      if (panelTitleEl) panelTitleEl.textContent = btn.dataset.title || '';
+      if (playBtn)      playBtn.disabled = false;
+
+      panel.classList.add('is-open');
+
+      // Load the track (auto_play starts it immediately)
+      widget.load(btn.dataset.src, {
+        auto_play: true,
+        hide_related: true,
+        show_comments: false,
+        show_user: false,
+        show_reposts: false,
+        show_teaser: false
       });
-
-      // Toggle this panel
-      const nowOpen = !isExpanded;
-      btn.setAttribute('aria-expanded', nowOpen ? 'true' : 'false');
-      if (panel) panel.classList.toggle('is-open', nowOpen);
     });
   });
+
+  // Play / Pause button
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      if (!currentBtn) return;
+      if (isPlaying) { widget.pause(); } else { widget.play(); }
+    });
+  }
+
+  // Progress bar seek
+  if (progressWrap) {
+    progressWrap.addEventListener('click', e => {
+      if (!currentBtn) return;
+      const rect = progressWrap.getBoundingClientRect();
+      const pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      widget.getDuration(duration => {
+        widget.seekTo(pct * duration);
+      });
+    });
+  }
 }
 
 /* ============================================================
