@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initScrollReveal();
-  initArcAnimation();
+  initArcChapters();
   initAudioPlayers();
   initApplicationForm();
   initHeroSequence();
@@ -98,22 +98,32 @@ function initScrollReveal() {
 /* ============================================================
    ARC TIMELINE ANIMATION
    ============================================================ */
-function initArcAnimation() {
-  const lineFill = document.querySelector('.arc__line-fill');
-  if (!lineFill) return;
+function initArcChapters() {
+  const chapterBtns = document.querySelectorAll('.arc__chapter-btn');
+  if (!chapterBtns.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        lineFill.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  chapterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+
+      // Close all other panels
+      chapterBtns.forEach(otherBtn => {
+        if (otherBtn !== btn) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          const otherPanelId = otherBtn.getAttribute('aria-controls');
+          const otherPanel = document.getElementById(otherPanelId);
+          if (otherPanel) otherPanel.classList.remove('is-open');
+        }
+      });
+
+      // Toggle this panel
+      const nowOpen = !isExpanded;
+      btn.setAttribute('aria-expanded', nowOpen ? 'true' : 'false');
+      if (panel) panel.classList.toggle('is-open', nowOpen);
     });
-  }, {
-    threshold: 0.3
   });
-
-  observer.observe(lineFill.parentElement);
 }
 
 /* ============================================================
