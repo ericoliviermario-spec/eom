@@ -1086,6 +1086,7 @@ a:hover {
 /* Positioning Statement */
 .positioning {
   padding: var(--space-5xl) var(--space-md);
+  background-color: rgb(18, 21, 26);
 }
 
 .positioning__inner {
