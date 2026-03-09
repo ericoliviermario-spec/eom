@@ -623,14 +623,6 @@ a:hover {
   position: relative;
 }
 
-.pathways::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 8, 6, 0.78);
-  pointer-events: none;
-  z-index: 0;
-}
 
 .pathways__grid {
   display: grid;
