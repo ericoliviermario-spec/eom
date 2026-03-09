@@ -729,8 +729,11 @@ a:hover {
 }
 
 .arc__label .label {
-  font-size: 30px;
+  font-size: clamp(32px, 5vw, 56px);
   font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
 }
 
 /* Scene wrap: constrains width and holds scene + mv labels */
