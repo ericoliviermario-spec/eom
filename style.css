@@ -5,7 +5,7 @@
 /* --- CSS Custom Properties (Design Tokens) --- */
 :root {
   /* Backgrounds */
-  --bg-deep: #1A1A1A;
+  --bg-deep: #12151a;
   --bg-surface: #222222;
   --bg-elevated: #2A2A2A;
 
@@ -620,10 +620,6 @@ a:hover {
 /* Pathways */
 .pathways {
   padding: var(--space-5xl) var(--space-md);
-  background-color: #0e0c0b;
-  background-image: url('pathway-bg.jpg');
-  background-size: cover;
-  background-position: center center;
   position: relative;
 }
 
@@ -734,10 +730,6 @@ a:hover {
 .arc {
   padding: var(--space-5xl) var(--space-xl) var(--space-3xl);
   text-align: center;
-  background-image: url('arc2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .arc__label {
@@ -1086,7 +1078,6 @@ a:hover {
 /* Positioning Statement */
 .positioning {
   padding: var(--space-5xl) var(--space-md);
-  background-color: rgb(18, 21, 26);
 }
 
 .positioning__inner {
@@ -1140,7 +1131,6 @@ a:hover {
 /* Invitation */
 .invitation {
   padding: var(--space-5xl) var(--space-md);
-  background: var(--horizon-warm-subtle);
   text-align: center;
 }
 
