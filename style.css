@@ -722,6 +722,22 @@ a:hover {
 .arc {
   padding: var(--space-5xl) var(--space-xl) var(--space-3xl);
   text-align: center;
+  position: relative;
+  background-image: url('arc4.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.arc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  z-index: 0;
+}
+.arc > * {
+  position: relative;
+  z-index: 1;
 }
 
 .arc__label {
