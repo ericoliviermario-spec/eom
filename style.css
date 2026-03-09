@@ -1105,7 +1105,7 @@ a:hover {
 }
 
 .positioning__text p {
-  font-size: clamp(14px, 1.5vw, 17px);
+  font-size: clamp(15px, 1.8vw, 19px);
   font-weight: 300;
   line-height: 1.75;
   color: var(--text-secondary);
