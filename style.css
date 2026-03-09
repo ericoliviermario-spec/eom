@@ -6,7 +6,7 @@
 :root {
   /* Backgrounds */
   --bg-deep: #12151a;
-  --bg-surface: #222222;
+  --bg-surface: #12151a;
   --bg-elevated: #2A2A2A;
 
   /* Text */
@@ -24,7 +24,7 @@
   /* Gradients */
   --horizon-warm: linear-gradient(180deg, #1A1A1A 0%, #2D1F1A 50%, #4A3228 80%, #8B5E3C 100%);
   --horizon-cool: linear-gradient(180deg, #1A1A1A 0%, #1A1F2D 50%, #2A3548 100%);
-  --horizon-warm-subtle: linear-gradient(180deg, #1A1A1A 0%, #231C18 40%, #2D1F1A 100%);
+  --horizon-warm-subtle: #12151a;
 
   /* Spacing */
   --space-xs: 8px;
@@ -1247,13 +1247,13 @@ a:hover {
   z-index: 1;
 }
 
-/* Chapter backgrounds - gradient shift across chapters */
-.chapter--1 { background-color: #141820; }
-.chapter--2 { background-color: #171920; }
-.chapter--3 { background-color: #1A1B1F; }
-.chapter--4 { background-color: #1D1A18; }
-.chapter--5 { background-color: #1F1B17; }
-.chapter--6 { background: var(--horizon-warm-subtle); }
+/* Chapter backgrounds - unified charcoal */
+.chapter--1,
+.chapter--2,
+.chapter--3,
+.chapter--4,
+.chapter--5,
+.chapter--6 { background-color: #12151a; }
 
 .chapter__numeral {
   font-family: 'Cormorant Garamond', serif;
