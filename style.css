@@ -1786,6 +1786,62 @@ a:hover {
   margin-bottom: var(--space-xl);
 }
 
+/* Module I — cream */
+.modules .module-card:first-child {
+  background: #F2EDE4;
+  border-color: rgba(160, 130, 90, 0.25);
+}
+.modules .module-card:first-child:hover {
+  border-color: rgba(120, 90, 50, 0.5);
+}
+.modules .module-card:first-child .module-card__label,
+.modules .module-card:first-child .module-card__title,
+.modules .module-card:first-child .module-card__tagline,
+.modules .module-card:first-child .module-card__body,
+.modules .module-card:first-child .module-card__transform p,
+.modules .module-card:first-child p {
+  color: #2a1e10;
+}
+.modules .module-card:first-child .module-card__format {
+  color: #6a5030;
+}
+.modules .module-card:first-child .link-arrow {
+  color: #3a2810;
+  border-bottom-color: rgba(58, 40, 16, 0.3);
+}
+.modules .module-card:first-child .link-arrow:hover {
+  color: #1a1005;
+  border-bottom-color: #1a1005;
+}
+
+/* Module II — warm amber */
+.modules .module-card:last-child {
+  background: #B87820;
+  border-color: rgba(200, 140, 20, 0.3);
+}
+.modules .module-card:last-child:hover {
+  border-color: rgba(240, 180, 40, 0.5);
+}
+.modules .module-card:last-child .module-card__label,
+.modules .module-card:last-child .module-card__title,
+.modules .module-card:last-child .module-card__tagline,
+.modules .module-card:last-child .module-card__body,
+.modules .module-card:last-child .module-card__transform p,
+.modules .module-card:last-child p {
+  color: #1c0e00;
+}
+.modules .module-card:last-child .module-card__format {
+  color: #4a2e00;
+}
+.modules .module-card:last-child .link-arrow {
+  color: #2a1800;
+  border-bottom-color: rgba(42, 24, 0, 0.3);
+}
+.modules .module-card:last-child .link-arrow:hover {
+  color: #100800;
+  border-bottom-color: #100800;
+}
+
 /* For / Not For */
 .fit-section {
   padding: var(--space-4xl) var(--space-md);
