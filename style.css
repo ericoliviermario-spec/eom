@@ -767,6 +767,7 @@ a:hover {
   color: var(--text-secondary);
   line-height: 1.75;
   margin: var(--space-sm) 0 0;
+  text-align: center;
 }
 
 .arc__label .label {
