@@ -767,7 +767,7 @@ a:hover {
   letter-spacing: 0.01em;
   color: var(--text-secondary);
   line-height: 1.75;
-  margin: var(--space-sm) 0 0;
+  margin: var(--space-sm) auto 0;
   text-align: center;
 }
 
