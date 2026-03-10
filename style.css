@@ -688,8 +688,21 @@ a:hover {
 .about-lineage > * { position: relative; z-index: 1; }
 
 .about-bridge {
-  background: linear-gradient(180deg, #1c1915 0%, #12151a 100%);
+  background: linear-gradient(180deg, #12151a 0%, #111520 40%, #141820 100%);
+  position: relative;
 }
+.about-bridge::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 20%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(26, 45, 70, 0.25) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.about-bridge > * { position: relative; z-index: 1; }
 
 /* --- Atmospheric gradients (journey page) --- */
 .philosophy {
