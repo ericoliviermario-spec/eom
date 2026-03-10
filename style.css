@@ -945,7 +945,7 @@ a:hover {
 
 /* Scene wrap: constrains width and holds scene + mv labels */
 .arc__scene-wrap {
-  max-width: 860px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
@@ -1104,24 +1104,24 @@ a:hover {
 .arc__mv-label--center { text-align: center; }
 .arc__mv-label--right  { text-align: right; }
 
-/* Shared info + player panel — centered inside arc scene */
+/* Player panel — sits in normal flow below movement labels */
 .arc__panel {
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  transform: translateX(-50%);
-  width: 72%;
-  max-width: 460px;
-  z-index: 2;
-  overflow: hidden;
+  width: 100%;
   max-height: 0;
+  overflow: hidden;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition: max-height 0.5s ease, opacity 0.35s ease, margin-top 0.35s ease;
+  margin-top: 0;
+  border-radius: 10px;
+  background: rgba(8, 12, 18, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.07);
 }
 
 .arc__panel.is-open {
-  max-height: 300px;
+  max-height: 320px;
   opacity: 1;
+  margin-top: var(--space-lg);
 }
 
 .arc__panel-info {
