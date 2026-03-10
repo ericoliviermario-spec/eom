@@ -14,15 +14,30 @@
     html, body { background: linear-gradient(150deg, #E8EAEC 0%, #D6DCE0 55%, #C8D0D8 100%) !important; }
     .page-wrapper { background: transparent !important; }
 
+    /* Nav — dark so logo and links are readable */
+    .nav { background: rgba(20,24,28,0.82) !important; backdrop-filter: blur(12px); }
+
     /* Section backgrounds */
-    .module-hero { padding-top: 80px !important; }
-    .module-hero::before { background: rgba(232,234,236,0.15) !important; }
+    .module-hero { padding-top: 80px !important; background: url('module-1.jpg') center center / cover no-repeat !important; }
+    .module-hero::before { background: rgba(20,28,36,0.45) !important; }
     .transformation { background: rgba(208,218,228,0.3) !important; }
     .weeks { background: rgba(200,212,224,0.35) !important; }
     .fit-section { background: transparent !important; }
     .container-section { background: transparent !important; }
+    .investment { background: url('module-1.jpg') center center / cover no-repeat !important; }
+    .investment::before { background: rgba(20,28,36,0.55) !important; }
 
-    /* Typography */
+    /* Hero text — light over dark image */
+    .module-hero h1, .module-hero .microcopy { color: #E8EAE8 !important; }
+    .module-hero .label { color: rgba(220,228,235,0.75) !important; }
+    /* Investment text — light over dark image */
+    .investment .label { color: rgba(220,228,235,0.75) !important; }
+    .investment p { color: #D8E0E8 !important; }
+    .investment p span { color: rgba(180,200,218,0.8) !important; }
+    .investment .btn { color: #E8EAF0 !important; border-color: rgba(232,234,240,0.6) !important; }
+    .investment .btn:hover { background: rgba(232,234,240,0.15) !important; }
+
+    /* Typography — body sections (light background) */
     h1, h2, h3, h4 { color: #1A1E22 !important; }
     p { color: #2E3840 !important; }
     .label { color: #526070 !important; }
