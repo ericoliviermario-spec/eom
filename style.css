@@ -674,9 +674,18 @@ a:hover {
 .about-bio > * { position: relative; z-index: 1; }
 
 .about-lineage {
-  background: radial-gradient(ellipse 70% 60% at 80% 40%, rgba(139, 94, 60, 0.1) 0%, transparent 65%),
-              linear-gradient(180deg, #141820 0%, #1a1c1e 50%, #1c1915 100%);
+  background: url('background-lineage.jpg') center center / cover no-repeat;
+  position: relative;
 }
+.about-lineage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 0;
+}
+.about-lineage > * { position: relative; z-index: 1; }
 
 .about-bridge {
   background: linear-gradient(180deg, #1c1915 0%, #12151a 100%);
@@ -2343,7 +2352,6 @@ a:hover {
 
 .about-lineage {
   padding: var(--space-4xl) var(--space-md);
-  background: var(--bg-surface);
 }
 
 .about-lineage .label {
