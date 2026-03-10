@@ -926,6 +926,15 @@ a:hover {
   text-align: center;
 }
 
+.arc__subtitle--cta {
+  font-size: clamp(18px, 2.2vw, 24px) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: var(--text-primary) !important;
+  opacity: 0.85;
+  letter-spacing: 0.03em !important;
+}
+
 .arc__label .label {
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 300;
