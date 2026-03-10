@@ -653,6 +653,7 @@ a:hover {
   background: radial-gradient(ellipse 90% 70% at 15% 50%, rgba(26, 45, 70, 0.4) 0%, transparent 65%),
               radial-gradient(ellipse 60% 50% at 85% 60%, rgba(139, 94, 60, 0.12) 0%, transparent 65%),
               linear-gradient(180deg, #141c2a 0%, #1a1e24 50%, #1c1915 100%);
+}
 
 /* Pathways */
 .pathways {
@@ -677,6 +678,7 @@ a:hover {
 .pathways__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
   max-width: var(--width-layout);
   margin: 0 auto;
   position: relative;
@@ -690,10 +692,12 @@ a:hover {
   flex-direction: column;
   align-items: center;
   gap: var(--space-md);
-  transition: background var(--duration-slow) var(--ease-default);
+  transition: background var(--duration-slow) var(--ease-default),
+              border-color var(--duration-slow) var(--ease-default);
   position: relative;
   text-decoration: none;
-  background: rgba(232, 220, 200, 0.05);
+  background: rgba(232, 220, 200, 0.06);
+  border: 1px solid rgba(232, 220, 200, 0.08);
   overflow: hidden;
 }
 
@@ -701,7 +705,7 @@ a:hover {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(232, 220, 200, 0.03);
+  background: linear-gradient(180deg, rgba(232, 220, 200, 0.04) 0%, rgba(232, 220, 200, 0.01) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -724,6 +728,7 @@ a:hover {
 
 .pathway:hover {
   background: rgba(232, 220, 200, 0.1);
+  border-color: rgba(232, 220, 200, 0.15);
 }
 
 .pathway__label {
