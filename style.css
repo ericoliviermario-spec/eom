@@ -1137,6 +1137,7 @@ a:hover {
   border: none;
   display: block;
   border-radius: 4px;
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .arc__panel-mv {
