@@ -1534,6 +1534,40 @@ a:hover {
   line-height: 1.8;
 }
 
+.journey-gains__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(20px, 2.5vw, 26px);
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.journey-gains__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.journey-gains__item {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.journey-gains__item::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
 /* Module cards */
 .modules {
   padding: var(--space-4xl) var(--space-md);
