@@ -631,8 +631,8 @@ a:hover {
   border-color: #1e1610;
 }
 
-/* --- Film grain overlay (home page) --- */
-.home-page .page-wrapper::after {
+/* --- Film grain overlay (all pages) --- */
+.page-wrapper::after {
   content: '';
   position: fixed;
   inset: 0;
@@ -653,6 +653,98 @@ a:hover {
   background: radial-gradient(ellipse 90% 70% at 15% 50%, rgba(26, 45, 70, 0.4) 0%, transparent 65%),
               radial-gradient(ellipse 60% 50% at 85% 60%, rgba(139, 94, 60, 0.12) 0%, transparent 65%),
               linear-gradient(180deg, #141c2a 0%, #1a1e24 50%, #1c1915 100%);
+}
+
+/* --- Atmospheric gradients (about page) --- */
+.about-bio {
+  background: linear-gradient(180deg, #12151a 0%, #111520 40%, #141820 100%);
+  position: relative;
+}
+.about-bio::before {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: 30%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(26, 45, 70, 0.3) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.about-bio > * { position: relative; z-index: 1; }
+
+.about-lineage {
+  background: radial-gradient(ellipse 70% 60% at 80% 40%, rgba(139, 94, 60, 0.1) 0%, transparent 65%),
+              linear-gradient(180deg, #141820 0%, #1a1c1e 50%, #1c1915 100%);
+}
+
+.about-bridge {
+  background: linear-gradient(180deg, #1c1915 0%, #12151a 100%);
+}
+
+/* --- Atmospheric gradients (journey page) --- */
+.philosophy {
+  background: linear-gradient(180deg, #12151a 0%, #111520 50%, #141820 100%);
+  position: relative;
+}
+.philosophy::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 40%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(26, 45, 70, 0.25) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.philosophy > * { position: relative; z-index: 1; }
+
+.modules {
+  background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(139, 94, 60, 0.08) 0%, transparent 65%),
+              linear-gradient(180deg, #141820 0%, #12151a 100%);
+}
+
+.apply-bridge {
+  background: linear-gradient(180deg, #12151a 0%, #141820 50%, #12151a 100%);
+}
+
+/* --- Atmospheric gradients (apply page) --- */
+.form-section {
+  background: linear-gradient(180deg, #12151a 0%, #111520 40%, #141820 100%);
+  position: relative;
+}
+.form-section::before {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(26, 45, 70, 0.2) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+.form-section > * { position: relative; z-index: 1; }
+
+/* --- Atmospheric gradients (module pages) --- */
+.transformation {
+  background: linear-gradient(180deg, #12151a 0%, #111520 50%, #141820 100%);
+}
+
+.weeks {
+  background: radial-gradient(ellipse 70% 50% at 30% 50%, rgba(26, 45, 70, 0.2) 0%, transparent 65%),
+              linear-gradient(180deg, #141820 0%, #12151a 100%) !important;
+}
+
+.investment {
+  position: relative;
+}
+
+/* --- Atmospheric gradients (music page) --- */
+.music-bridge {
+  background: linear-gradient(180deg, #12151a 0%, #141820 50%, #1c1915 100%) !important;
 }
 
 /* Pathways */
