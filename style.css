@@ -769,6 +769,33 @@ a:hover {
   background: linear-gradient(180deg, #12151a 0%, #141820 50%, #1c1915 100%) !important;
 }
 
+/* Spotify Showcase */
+.spotify-showcase {
+  padding: var(--space-5xl) var(--space-md);
+}
+
+.spotify-showcase__intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 2vw, 20px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin: 0 auto var(--space-2xl);
+  max-width: 540px;
+}
+
+.spotify-showcase__intro em {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.spotify-showcase__player {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+
 /* Pathways */
 .pathways {
   padding: var(--space-5xl) var(--space-md);
