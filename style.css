@@ -771,7 +771,7 @@ a:hover {
 
 /* Spotify Showcase */
 .spotify-showcase {
-  padding: var(--space-5xl) var(--space-md);
+  padding: var(--space-5xl) var(--space-md) var(--space-2xl);
 }
 
 .spotify-showcase__intro {
