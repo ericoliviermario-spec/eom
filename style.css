@@ -513,6 +513,99 @@ a:hover {
   transition: color var(--duration-normal) var(--ease-default);
 }
 
+/* Newsletter */
+.newsletter-bar {
+  max-width: var(--width-layout);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.newsletter-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.newsletter-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.newsletter-fields {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  padding: 8px 14px;
+  border-radius: 0;
+  outline: none;
+  transition: border-color var(--duration-normal) var(--ease-default);
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-muted);
+}
+
+.newsletter-input:focus {
+  border-color: var(--text-secondary);
+}
+
+.newsletter-btn {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: color var(--duration-normal) var(--ease-default), border-color var(--duration-normal) var(--ease-default);
+}
+
+.newsletter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.newsletter-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.newsletter-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  margin-top: var(--space-sm);
+}
+
+.newsletter-message--success {
+  color: rgba(160, 200, 160, 0.9);
+}
+
+.newsletter-message--error {
+  color: rgba(200, 140, 130, 0.9);
+}
+
 .footer__link:hover {
   color: var(--text-primary);
 }

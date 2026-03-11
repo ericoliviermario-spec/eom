@@ -136,6 +136,74 @@
           </ul>
         </div>
       </div>
+
+      <!-- Newsletter Signup -->
+      <div class="newsletter-bar">
+        <div class="newsletter-inner">
+          <p class="newsletter-label">Stay close</p>
+          <p class="newsletter-sub">New music, reflections, and occasional openings. Only when there is something real to say.</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-fields">
+              <input type="text" name="name" placeholder="Your name" autocomplete="given-name" class="newsletter-input" />
+              <input type="email" name="email" placeholder="Your email" autocomplete="email" required class="newsletter-input" />
+              <button type="submit" class="newsletter-btn">
+                <span class="newsletter-btn-text">Subscribe</span>
+                <span class="newsletter-btn-loading" aria-hidden="true" style="display:none;">...</span>
+              </button>
+            </div>
+            <p class="newsletter-message" id="newsletterMessage" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+      <script>
+      (function () {
+        const form = document.getElementById('newsletterForm');
+        const msg  = document.getElementById('newsletterMessage');
+        if (!form) return;
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          msg.textContent = '';
+          msg.className = 'newsletter-message';
+          const email = form.email.value.trim();
+          const name  = form.name.value.trim();
+          if (!email) {
+            msg.textContent = 'Please enter your email.';
+            msg.classList.add('newsletter-message--error');
+            return;
+          }
+          const btnText    = form.querySelector('.newsletter-btn-text');
+          const btnLoading = form.querySelector('.newsletter-btn-loading');
+          btnText.style.display    = 'none';
+          btnLoading.style.display = 'inline';
+          form.querySelector('.newsletter-btn').disabled = true;
+          try {
+            const res = await fetch('/api/subscribe', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, email }),
+            });
+            const json = await res.json();
+            if (res.ok && json.success) {
+              msg.textContent = 'You are in. Thank you.';
+              msg.classList.add('newsletter-message--success');
+              form.reset();
+            } else {
+              msg.textContent = json.error || 'Something went wrong. Please try again.';
+              msg.classList.add('newsletter-message--error');
+            }
+          } catch {
+            msg.textContent = 'Network error. Please try again.';
+            msg.classList.add('newsletter-message--error');
+          } finally {
+            btnText.style.display    = 'inline';
+            btnLoading.style.display = 'none';
+            form.querySelector('.newsletter-btn').disabled = false;
+          }
+        });
+      })();
+      </script>
+
     </footer>
   </div>
 
