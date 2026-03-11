@@ -13,3 +13,5 @@ node_modules/
 .DS_Store
 ch*.mp3
 ch*.wav
+.vercel
+.env*.local
