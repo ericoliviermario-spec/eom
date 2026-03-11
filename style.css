@@ -515,11 +515,15 @@ a:hover {
 
 /* Newsletter */
 .newsletter-bar {
-  max-width: var(--width-layout);
-  margin: 0 auto;
+  width: 100%;
   padding: var(--space-2xl) var(--space-md) var(--space-lg);
   border-top: 1px solid var(--border-subtle);
   text-align: center;
+}
+
+.newsletter-inner {
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 .newsletter-label {
