@@ -69,12 +69,19 @@
   <a href="#main" class="skip-link">Skip to content</a>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="index.html" class="nav__logo"><img src="logo.png" alt="Eric Olivier Mario" class="nav__logo-img"></a>
+    <div class="nav__brand">
+      <a href="index.html" class="nav__logo"><img src="logo.png" alt="Eric Olivier Mario" class="nav__logo-img"></a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-toggle__en">EN</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__fr">FR</span>
+      </button>
+    </div>
     <ul class="nav__links">
-      <li><a href="music.html" class="nav__link">Music</a></li>
-      <li><a href="the-journey.html" class="nav__link nav__link--active">The Journey</a></li>
-      <li><a href="apply.html" class="nav__link">Apply</a></li>
-      <li><a href="about.html" class="nav__link">About</a></li>
+      <li><a href="music.html" class="nav__link" data-i18n="nav.music">Music</a></li>
+      <li><a href="the-journey.html" class="nav__link nav__link--active" data-i18n="nav.journey">The Journey</a></li>
+      <li><a href="apply.html" class="nav__link" data-i18n="nav.apply">Apply</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
     </ul>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
       <span class="nav__toggle-line"></span>
@@ -84,10 +91,15 @@
   </nav>
 
   <div class="nav__mobile-overlay" aria-hidden="true">
-    <a href="music.html">Music</a>
-    <a href="the-journey.html">The Journey</a>
-    <a href="apply.html">Apply</a>
-    <a href="about.html">About</a>
+    <a href="music.html" data-i18n="nav.music">Music</a>
+    <a href="the-journey.html" data-i18n="nav.journey">The Journey</a>
+    <a href="apply.html" data-i18n="nav.apply">Apply</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" aria-label="Switch language">
+      <span class="lang-toggle__en">EN</span>
+      <span class="lang-toggle__sep">|</span>
+      <span class="lang-toggle__fr">FR</span>
+    </button>
   </div>
 
   <div class="page-wrapper">
@@ -95,23 +107,23 @@
 
       <!-- Hero -->
       <section class="module-hero">
-        <p class="label hero-reveal hero-reveal-1">Module I</p>
-        <h1 class="hero-reveal hero-reveal-2" style="font-size: clamp(36px, 5vw, 64px); margin-top: var(--space-md); margin-bottom: var(--space-lg); text-align: center;">Rooted Creation</h1>
-        <p class="microcopy hero-reveal hero-reveal-3">Discover your creative foundation — a single session to begin.</p>
+        <p class="label hero-reveal hero-reveal-1" data-i18n="m1.label">Module I</p>
+        <h1 class="hero-reveal hero-reveal-2" style="font-size: clamp(36px, 5vw, 64px); margin-top: var(--space-md); margin-bottom: var(--space-lg); text-align: center;" data-i18n="m1.title">Rooted Creation</h1>
+        <p class="microcopy hero-reveal hero-reveal-3" data-i18n="m1.microcopy">Discover your creative foundation — a single session to begin.</p>
       </section>
 
       <!-- Transformation -->
       <section class="transformation section section--large-pad">
         <div class="transformation__grid reveal">
           <div class="transformation__col">
-            <h3>Where you begin</h3>
-            <p>You feel the pull to create but the tools feel unfamiliar, or the sounds you reach for don't feel like yours. Maybe you are starting from scratch entirely.</p>
-            <p>There is a gap between who you are and what you make — and you are ready to close it.</p>
+            <h3 data-i18n="m1.where-begin.h">Where you begin</h3>
+            <p data-i18n="m1.where-begin.p1">You feel the pull to create but the tools feel unfamiliar, or the sounds you reach for don't feel like yours. Maybe you are starting from scratch entirely.</p>
+            <p data-i18n="m1.where-begin.p2">There is a gap between who you are and what you make — and you are ready to close it.</p>
           </div>
           <div class="transformation__col">
-            <h3>Where this leads</h3>
-            <p>In a single 2-hour session, you reconnect with your authentic creative voice — exploring your identity, your influences, and what exists underneath them.</p>
-            <p>You leave with a first project built from scratch in Logic Pro, a clearer sense of direction, and a written summary of your next steps.</p>
+            <h3 data-i18n="m1.where-leads.h">Where this leads</h3>
+            <p data-i18n="m1.where-leads.p1">In a single 2-hour session, you reconnect with your authentic creative voice — exploring your identity, your influences, and what exists underneath them.</p>
+            <p data-i18n="m1.where-leads.p2">You leave with a first project built from scratch in Logic Pro, a clearer sense of direction, and a written summary of your next steps.</p>
           </div>
         </div>
       </section>
@@ -119,24 +131,24 @@
       <!-- Session Parts -->
       <section class="weeks">
         <div class="weeks__inner reveal">
-          <p class="weeks__title">What happens inside the session</p>
+          <p class="weeks__title" data-i18n="m1.session.title">What happens inside the session</p>
 
           <div class="week">
-            <p class="week__label">Part 1</p>
-            <p class="week__theme">Unearthing</p>
-            <p class="week__desc">We begin by discovering your authentic voice — exploring your creativity, your past influences, and what exists underneath them. Finding the artistic identity and references that are truly yours.</p>
+            <p class="week__label" data-i18n="m1.part1.label">Part 1</p>
+            <p class="week__theme" data-i18n="m1.part1.theme">Unearthing</p>
+            <p class="week__desc" data-i18n="m1.part1.desc">We begin by discovering your authentic voice — exploring your creativity, your past influences, and what exists underneath them. Finding the artistic identity and references that are truly yours.</p>
           </div>
 
           <div class="week">
-            <p class="week__label">Part 2</p>
-            <p class="week__theme">Creation</p>
-            <p class="week__desc">You learn to create a project from scratch in Logic Pro. I teach you the techniques to start putting your ideas together — session setup, signal flow, and the essentials of building sound from nothing.</p>
+            <p class="week__label" data-i18n="m1.part2.label">Part 2</p>
+            <p class="week__theme" data-i18n="m1.part2.theme">Creation</p>
+            <p class="week__desc" data-i18n="m1.part2.desc">You learn to create a project from scratch in Logic Pro. I teach you the techniques to start putting your ideas together — session setup, signal flow, and the essentials of building sound from nothing.</p>
           </div>
 
           <div class="week">
-            <p class="week__label">Part 3</p>
-            <p class="week__theme">First Movements</p>
-            <p class="week__desc">Translating your insights into sound. Experimenting with initial compositions that reflect your unique emotional landscape — slowly, without judgment, without reference.</p>
+            <p class="week__label" data-i18n="m1.part3.label">Part 3</p>
+            <p class="week__theme" data-i18n="m1.part3.theme">First Movements</p>
+            <p class="week__desc" data-i18n="m1.part3.desc">Translating your insights into sound. Experimenting with initial compositions that reflect your unique emotional landscape — slowly, without judgment, without reference.</p>
           </div>
         </div>
       </section>
@@ -145,17 +157,17 @@
       <section class="fit-section section">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: var(--space-xl);">
-            <span class="label">What you walk away with</span>
+            <span class="label" data-i18n="m1.walkaway.label">What you walk away with</span>
           </div>
           <div class="container--narrow reveal">
             <ul class="fit-col__list">
-              <li class="fit-col__item">A reference track that reflects your emerging sound identity</li>
-              <li class="fit-col__item">A first Logic Pro project started from scratch — your very first sonic sketch</li>
-              <li class="fit-col__item">A recorded session summary capturing your key insights, references, and direction</li>
-              <li class="fit-col__item">Clarity on your 3 core influences and how to translate them into your own sound</li>
-              <li class="fit-col__item">A creative brief — a one-page document defining your artist identity, mood, and sonic direction</li>
-              <li class="fit-col__item">A next steps roadmap — what to work on in the weeks ahead</li>
-              <li class="fit-col__item">Confidence that you have something real to build from</li>
+              <li class="fit-col__item" data-i18n="m1.walkaway.1">A reference track that reflects your emerging sound identity</li>
+              <li class="fit-col__item" data-i18n="m1.walkaway.2">A first Logic Pro project started from scratch — your very first sonic sketch</li>
+              <li class="fit-col__item" data-i18n="m1.walkaway.3">A recorded session summary capturing your key insights, references, and direction</li>
+              <li class="fit-col__item" data-i18n="m1.walkaway.4">Clarity on your 3 core influences and how to translate them into your own sound</li>
+              <li class="fit-col__item" data-i18n="m1.walkaway.5">A creative brief — a one-page document defining your artist identity, mood, and sonic direction</li>
+              <li class="fit-col__item" data-i18n="m1.walkaway.6">A next steps roadmap — what to work on in the weeks ahead</li>
+              <li class="fit-col__item" data-i18n="m1.walkaway.7">Confidence that you have something real to build from</li>
             </ul>
           </div>
         </div>
@@ -165,13 +177,13 @@
       <section class="fit-section section" style="padding-top: 0;">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: var(--space-xl);">
-            <span class="label">After this module you will</span>
+            <span class="label" data-i18n="m1.after.label">After this module you will</span>
           </div>
           <div class="container--narrow reveal">
             <ul class="journey-gains__list">
-              <li class="journey-gains__item">Complete one finished track</li>
-              <li class="journey-gains__item">Understand your harmonic language</li>
-              <li class="journey-gains__item">Develop a personal sonic identity</li>
+              <li class="journey-gains__item" data-i18n="m1.after.1">Complete one finished track</li>
+              <li class="journey-gains__item" data-i18n="m1.after.2">Understand your harmonic language</li>
+              <li class="journey-gains__item" data-i18n="m1.after.3">Develop a personal sonic identity</li>
             </ul>
           </div>
         </div>
@@ -180,19 +192,19 @@
       <!-- Container / Format -->
       <section class="container-section">
         <div class="container-section__inner reveal">
-          <p class="label" style="text-align: center; margin-bottom: var(--space-xl);">The container</p>
+          <p class="label" style="text-align: center; margin-bottom: var(--space-xl);" data-i18n="m1.container.label">The container</p>
           <div class="container-section__grid">
             <div class="container-section__item">
-              <p class="container-section__item-label">Format</p>
-              <p class="container-section__item-value">1-to-1<br>with Eric</p>
+              <p class="container-section__item-label" data-i18n="m1.container.format-label">Format</p>
+              <p class="container-section__item-value" data-i18n-html="m1.container.format-value">1-to-1<br>with Eric</p>
             </div>
             <div class="container-section__item">
-              <p class="container-section__item-label">Duration</p>
-              <p class="container-section__item-value">Single session<br>2 hours</p>
+              <p class="container-section__item-label" data-i18n="m1.container.duration-label">Duration</p>
+              <p class="container-section__item-value" data-i18n-html="m1.container.duration-value">Single session<br>2 hours</p>
             </div>
             <div class="container-section__item">
-              <p class="container-section__item-label">Prerequisite</p>
-              <p class="container-section__item-value">None — this is<br>where you start</p>
+              <p class="container-section__item-label" data-i18n="m1.container.prereq-label">Prerequisite</p>
+              <p class="container-section__item-value" data-i18n-html="m1.container.prereq-value">None — this is<br>where you start</p>
             </div>
           </div>
         </div>
@@ -201,17 +213,17 @@
       <!-- Investment -->
       <section class="investment reveal">
         <div class="container--narrow text-center">
-          <p class="label" style="margin-bottom: var(--space-xl);">Investment</p>
-          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300;">£69</p>
-          <p>A single 2-hour discovery session. You leave with a project started, a written summary, and clear next steps.</p>
-          <p class="microcopy" style="margin-bottom: var(--space-xl);">This is the entry point into The Journey — no prerequisites, no commitment beyond this session.</p>
-          <a href="apply.html" class="btn">Book Module I</a>
+          <p class="label" style="margin-bottom: var(--space-xl);" data-i18n="m1.investment.label">Investment</p>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300;" data-i18n="m1.investment.price">£69</p>
+          <p data-i18n="m1.investment.desc">A single 2-hour discovery session. You leave with a project started, a written summary, and clear next steps.</p>
+          <p class="microcopy" style="margin-bottom: var(--space-xl);" data-i18n="m1.investment.microcopy">This is the entry point into The Journey — no prerequisites, no commitment beyond this session.</p>
+          <a href="apply.html" class="btn" data-i18n="m1.investment.btn">Book Module I</a>
         </div>
       </section>
 
       <!-- Back link -->
       <section class="section" style="text-align: center; padding-top: 0;">
-        <a href="the-journey.html" class="link-arrow" style="flex-direction: row-reverse;">All Modules</a>
+        <a href="the-journey.html" class="link-arrow" style="flex-direction: row-reverse;" data-i18n="m1.back">All Modules</a>
       </section>
 
     </main>
@@ -220,14 +232,14 @@
       <!-- Newsletter Signup -->
       <div class="newsletter-bar">
         <div class="newsletter-inner">
-          <p class="newsletter-label">Stay close</p>
-          <p class="newsletter-sub">New music, reflections, and occasional openings. Only when there is something real to say.</p>
+          <p class="newsletter-label" data-i18n="newsletter.label">Stay close</p>
+          <p class="newsletter-sub" data-i18n="newsletter.sub">New music, reflections, and occasional openings. Only when there is something real to say.</p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <div class="newsletter-fields">
-              <input type="text" name="name" placeholder="Your name" autocomplete="given-name" class="newsletter-input" />
-              <input type="email" name="email" placeholder="Your email" autocomplete="email" required class="newsletter-input" />
+              <input type="text" name="name" placeholder="Your name" autocomplete="given-name" class="newsletter-input" data-i18n-placeholder="newsletter.name-placeholder" />
+              <input type="email" name="email" placeholder="Your email" autocomplete="email" required class="newsletter-input" data-i18n-placeholder="newsletter.email-placeholder" />
               <button type="submit" class="newsletter-btn">
-                <span class="newsletter-btn-text">Subscribe</span>
+                <span class="newsletter-btn-text" data-i18n="newsletter.btn">Subscribe</span>
                 <span class="newsletter-btn-loading" aria-hidden="true" style="display:none;">...</span>
               </button>
             </div>
@@ -288,10 +300,10 @@
         <span class="footer__name">Eric Olivier Mario</span>
         <div class="footer__right">
           <ul class="footer__links">
-            <li><a href="music.html" class="footer__link">Music</a></li>
-            <li><a href="the-journey.html" class="footer__link">The Journey</a></li>
-            <li><a href="apply.html" class="footer__link">Apply</a></li>
-            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="music.html" class="footer__link" data-i18n="nav.music">Music</a></li>
+            <li><a href="the-journey.html" class="footer__link" data-i18n="nav.journey">The Journey</a></li>
+            <li><a href="apply.html" class="footer__link" data-i18n="nav.apply">Apply</a></li>
+            <li><a href="about.html" class="footer__link" data-i18n="nav.about">About</a></li>
           </ul>
         </div>
       </div>
@@ -300,5 +312,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="lang.js"></script>
 </body>
 </html>

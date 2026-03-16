@@ -2676,3 +2676,59 @@ a:hover {
 .spacer-md { height: var(--space-md); }
 .spacer-lg { height: var(--space-lg); }
 .spacer-xl { height: var(--space-xl); }
+
+/* ============================================================
+   LANGUAGE TOGGLE
+   ============================================================ */
+
+/* Brand wrapper: logo + lang switcher stacked below it */
+.nav__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.lang-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 2px 0;
+  border-radius: 3px;
+  transition: color 0.2s;
+}
+.lang-toggle:hover { color: var(--text-primary); }
+.lang-toggle__sep { opacity: 0.4; }
+.lang-toggle__en,
+.lang-toggle__fr { transition: opacity 0.2s; }
+
+/* Active language is bright, inactive is dim */
+[data-lang="en"] .lang-toggle__en { color: var(--text-primary); opacity: 1; }
+[data-lang="en"] .lang-toggle__fr { opacity: 0.4; }
+[data-lang="fr"] .lang-toggle__fr { color: var(--text-primary); opacity: 1; }
+[data-lang="fr"] .lang-toggle__en { opacity: 0.4; }
+
+/* Mobile overlay lang toggle */
+.lang-toggle--mobile {
+  margin-top: var(--space-xl);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  padding: 4px 8px;
+}
+
+/* Hide the brand toggle on mobile — mobile overlay has its own */
+@media (max-width: 768px) {
+  .nav__brand .lang-toggle { display: none; }
+}
+
+/* Home page light nav adjustments */
+.home-page .nav:not(.nav--scrolled) .lang-toggle { color: #3a2e22; }
+.home-page .nav:not(.nav--scrolled) .lang-toggle:hover { color: #1e1610; }

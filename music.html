@@ -253,12 +253,19 @@
   <a href="#main" class="skip-link">Skip to content</a>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="index.html" class="nav__logo"><img src="logo.png" alt="Eric Olivier Mario" class="nav__logo-img"></a>
+    <div class="nav__brand">
+      <a href="index.html" class="nav__logo"><img src="logo.png" alt="Eric Olivier Mario" class="nav__logo-img"></a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-toggle__en">EN</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__fr">FR</span>
+      </button>
+    </div>
     <ul class="nav__links">
-      <li><a href="music.html" class="nav__link nav__link--active">Music</a></li>
-      <li><a href="the-journey.html" class="nav__link">The Journey</a></li>
-      <li><a href="apply.html" class="nav__link">Apply</a></li>
-      <li><a href="about.html" class="nav__link">About</a></li>
+      <li><a href="music.html" class="nav__link nav__link--active" data-i18n="nav.music">Music</a></li>
+      <li><a href="the-journey.html" class="nav__link" data-i18n="nav.journey">The Journey</a></li>
+      <li><a href="apply.html" class="nav__link" data-i18n="nav.apply">Apply</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
     </ul>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
       <span class="nav__toggle-line"></span>
@@ -268,10 +275,15 @@
   </nav>
 
   <div class="nav__mobile-overlay" aria-hidden="true">
-    <a href="music.html">Music</a>
-    <a href="the-journey.html">The Journey</a>
-    <a href="apply.html">Apply</a>
-    <a href="about.html">About</a>
+    <a href="music.html" data-i18n="nav.music">Music</a>
+    <a href="the-journey.html" data-i18n="nav.journey">The Journey</a>
+    <a href="apply.html" data-i18n="nav.apply">Apply</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" aria-label="Switch language">
+      <span class="lang-toggle__en">EN</span>
+      <span class="lang-toggle__sep">|</span>
+      <span class="lang-toggle__fr">FR</span>
+    </button>
   </div>
 
   <div class="page-wrapper">
@@ -279,13 +291,12 @@
 
       <!-- ── Entrance ── -->
       <section class="music-entrance">
-        <div class="hero-reveal hero-reveal-1"><span class="label">Unfolding</span></div>
+        <div class="hero-reveal hero-reveal-1"><span class="label" data-i18n="music.label">Unfolding</span></div>
         <div class="hero-reveal hero-reveal-2" style="margin-top: var(--space-lg); text-align: center;">
-          <h1 style="font-size: clamp(36px, 5vw, 64px); margin-bottom: var(--space-md);">Three movements.</h1>
-          <p class="microcopy">Tracks that move from darkness into light.</p>
+          <h1 style="font-size: clamp(36px, 5vw, 64px); margin-bottom: var(--space-md);" data-i18n="music.heading">Three movements.</h1>
+          <p class="microcopy" data-i18n="music.microcopy">Tracks that move from darkness into light.</p>
         </div>
         <div class="hero-reveal hero-reveal-3" style="text-align: center; margin-top: var(--space-xl);">
-          <span style="font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Begin below</span>
           <span class="music-entrance__arrow" aria-hidden="true">↓</span>
         </div>
       </section>
@@ -293,8 +304,8 @@
       <!-- ── Album Arc ── -->
       <section class="arc reveal">
         <div class="arc__label">
-          <span class="label">The Arc behind my album — Unfolding</span>
-          <p class="arc__subtitle arc__subtitle--cta">▶ Each number is a track. Click to listen.</p>
+          <span class="label" data-i18n="music.arc.label">The Arc behind my album — Unfolding</span>
+          <p class="arc__subtitle arc__subtitle--cta" data-i18n="music.arc.cta">▶ Each number is a track. Click to listen.</p>
         </div>
 
         <!-- Visual arc scene -->
@@ -382,9 +393,9 @@
 
           <!-- Movement labels beneath the arc -->
           <div class="arc__mv-labels" aria-hidden="true">
-            <span class="arc__mv-label">Movement I<em>The Descent Beneath</em></span>
-            <span class="arc__mv-label arc__mv-label--center">Movement II<em>The Threshold Continuum</em></span>
-            <span class="arc__mv-label arc__mv-label--right">Movement III<em>The Return Release</em></span>
+            <span class="arc__mv-label"><span data-i18n="music.arc.mv1.label">Movement I</span><em data-i18n="music.arc.mv1.sub">The Descent Beneath</em></span>
+            <span class="arc__mv-label arc__mv-label--center"><span data-i18n="music.arc.mv2.label">Movement II</span><em data-i18n="music.arc.mv2.sub">The Threshold Continuum</em></span>
+            <span class="arc__mv-label arc__mv-label--right"><span data-i18n="music.arc.mv3.label">Movement III</span><em data-i18n="music.arc.mv3.sub">The Return Release</em></span>
           </div>
 
           <!-- Player panel — sits below the arc and labels -->
@@ -392,7 +403,7 @@
             <div class="arc__panel-info">
               <span class="arc__panel-mv" id="arc-panel-mv"></span>
               <span class="arc__panel-num" id="arc-panel-num">—</span>
-              <span class="arc__panel-title" id="arc-panel-title">Select a chapter</span>
+              <span class="arc__panel-title" id="arc-panel-title" data-i18n="music.arc.panel.select">Select a chapter</span>
             </div>
             <iframe class="arc__sc-embed" id="sc-player"
               frameborder="no"
@@ -403,7 +414,7 @@
         </div><!-- /.arc__scene-wrap -->
 
         <div class="arc__footer">
-          <p class="microcopy">
+          <p class="microcopy" data-i18n-html="music.arc.footer">
             From C minor to D major.<br>
             From darkness held — to light arrived.<br>
             <em style="font-style:italic; opacity:0.7;">I explain every movement below</em>
@@ -418,11 +429,11 @@
         <span class="movement__numeral-large" aria-hidden="true">I</span>
         <div class="container">
           <div class="reveal movement__inner">
-            <p class="movement__label">Movement I</p>
-            <h2 class="movement__title">The Descent Beneath</h2>
-            <p class="movement__subtitle">Inward Motion</p>
-            <p class="movement__description">The music you make when you're still underground — feeling your way through the dark without knowing what's ahead.</p>
-            <blockquote class="movement__reflection">"The first step is always down. Before you find anything, you lose the story you were told about yourself."</blockquote>
+            <p class="movement__label" data-i18n="music.mv1.label">Movement I</p>
+            <h2 class="movement__title" data-i18n="music.mv1.title">The Descent Beneath</h2>
+            <p class="movement__subtitle" data-i18n="music.mv1.subtitle">Inward Motion</p>
+            <p class="movement__description" data-i18n="music.mv1.desc">The music you make when you're still underground — feeling your way through the dark without knowing what's ahead.</p>
+            <blockquote class="movement__reflection" data-i18n="music.mv1.quote">"The first step is always down. Before you find anything, you lose the story you were told about yourself."</blockquote>
           </div>
         </div>
       </section>
@@ -432,11 +443,11 @@
         <span class="movement__numeral-large" aria-hidden="true">II</span>
         <div class="container">
           <div class="reveal movement__inner">
-            <p class="movement__label">Movement II</p>
-            <h2 class="movement__title">The Threshold Continuum</h2>
-            <p class="movement__subtitle">Music to Stay With</p>
-            <p class="movement__description">The suspended place between who you were and who you're becoming. Neither darkness nor light — pure transition.</p>
-            <blockquote class="movement__reflection">"Something stirs. Not understanding yet — just the sense that what was solid has begun to move."</blockquote>
+            <p class="movement__label" data-i18n="music.mv2.label">Movement II</p>
+            <h2 class="movement__title" data-i18n="music.mv2.title">The Threshold Continuum</h2>
+            <p class="movement__subtitle" data-i18n="music.mv2.subtitle">Music to Stay With</p>
+            <p class="movement__description" data-i18n="music.mv2.desc">The suspended place between who you were and who you're becoming. Neither darkness nor light — pure transition.</p>
+            <blockquote class="movement__reflection" data-i18n="music.mv2.quote">"Something stirs. Not understanding yet — just the sense that what was solid has begun to move."</blockquote>
           </div>
         </div>
       </section>
@@ -446,11 +457,11 @@
         <span class="movement__numeral-large" aria-hidden="true" style="color:rgba(255,255,255,0.05);">III</span>
         <div class="container">
           <div class="reveal movement__inner">
-            <p class="movement__label">Movement III</p>
-            <h2 class="movement__title">The Return Release</h2>
-            <p class="movement__subtitle">When the Weight Lifts</p>
-            <p class="movement__description">The music that arrives when you stop fighting. Not happiness — something quieter and more permanent than that.</p>
-            <blockquote class="movement__reflection">"Not the end. The beginning of creating from a place you no longer need to explain."</blockquote>
+            <p class="movement__label" data-i18n="music.mv3.label">Movement III</p>
+            <h2 class="movement__title" data-i18n="music.mv3.title">The Return Release</h2>
+            <p class="movement__subtitle" data-i18n="music.mv3.subtitle">When the Weight Lifts</p>
+            <p class="movement__description" data-i18n="music.mv3.desc">The music that arrives when you stop fighting. Not happiness — something quieter and more permanent than that.</p>
+            <blockquote class="movement__reflection" data-i18n="music.mv3.quote">"Not the end. The beginning of creating from a place you no longer need to explain."</blockquote>
           </div>
         </div>
       </section>
@@ -458,7 +469,7 @@
       <!-- ── Spotify Showcase ── -->
       <section class="spotify-showcase reveal">
         <div class="container--narrow text-center">
-          <p class="spotify-showcase__intro">
+          <p class="spotify-showcase__intro" data-i18n-html="music.showcase.intro">
             The arc above maps the album as a whole — nine tracks, three movements.<br>
             Below, a few pieces that best represent the sound: where it comes from, where it goes.<br>
             <em>Listen before you read further.</em>
@@ -481,19 +492,19 @@
       <!-- ── Closing Bridge ── -->
       <section class="music-bridge reveal">
         <div class="container--narrow text-center">
-          <p class="music-bridge__heading">The music beyond this page lives across these spaces —</p>
-          <p class="music-bridge__credits">
+          <p class="music-bridge__heading" data-i18n="music.bridge.heading">The music beyond this page lives across these spaces —</p>
+          <p class="music-bridge__credits" data-i18n-html="music.bridge.credits1">
             Supported by Paul van Dyk · Kyau &amp; Albert · Lumidelic
           </p>
-          <p class="music-bridge__credits">
+          <p class="music-bridge__credits" data-i18n="music.bridge.credits2">
             Released on Emergent · Soluna Music · Synth Collective · Synthdelic · Saturo · Summer Melody
           </p>
           <div class="music-bridge__links">
-            <a href="https://open.spotify.com/artist/0YdEBWhafYCG7q0DKSAC2l?si=HNLmhJqmQGOMB7UJHqxNYA" class="btn" target="_blank" rel="noopener">Listen on Spotify</a>
-            <a href="https://www.youtube.com/@ericoliviermario" class="btn" target="_blank" rel="noopener">Watch on YouTube</a>
+            <a href="https://open.spotify.com/artist/0YdEBWhafYCG7q0DKSAC2l?si=HNLmhJqmQGOMB7UJHqxNYA" class="btn" target="_blank" rel="noopener" data-i18n="music.bridge.spotify">Listen on Spotify</a>
+            <a href="https://www.youtube.com/@ericoliviermario" class="btn" target="_blank" rel="noopener" data-i18n="music.bridge.youtube">Watch on YouTube</a>
           </div>
           <div style="margin-top: var(--space-2xl);">
-            <a href="the-journey.html" class="btn">Explore The Journey</a>
+            <a href="the-journey.html" class="btn" data-i18n="music.bridge.journey">Explore The Journey</a>
           </div>
         </div>
       </section>
@@ -504,14 +515,14 @@
       <!-- Newsletter Signup -->
       <div class="newsletter-bar">
         <div class="newsletter-inner">
-          <p class="newsletter-label">Stay close</p>
-          <p class="newsletter-sub">New music, reflections, and occasional openings. Only when there is something real to say.</p>
+          <p class="newsletter-label" data-i18n="newsletter.label">Stay close</p>
+          <p class="newsletter-sub" data-i18n="newsletter.sub">New music, reflections, and occasional openings. Only when there is something real to say.</p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <div class="newsletter-fields">
-              <input type="text" name="name" placeholder="Your name" autocomplete="given-name" class="newsletter-input" />
-              <input type="email" name="email" placeholder="Your email" autocomplete="email" required class="newsletter-input" />
+              <input type="text" name="name" placeholder="Your name" autocomplete="given-name" class="newsletter-input" data-i18n-placeholder="newsletter.name-placeholder" />
+              <input type="email" name="email" placeholder="Your email" autocomplete="email" required class="newsletter-input" data-i18n-placeholder="newsletter.email-placeholder" />
               <button type="submit" class="newsletter-btn">
-                <span class="newsletter-btn-text">Subscribe</span>
+                <span class="newsletter-btn-text" data-i18n="newsletter.btn">Subscribe</span>
                 <span class="newsletter-btn-loading" aria-hidden="true" style="display:none;">...</span>
               </button>
             </div>
@@ -572,10 +583,10 @@
         <span class="footer__name">Eric Olivier Mario</span>
         <div class="footer__right">
           <ul class="footer__links">
-            <li><a href="music.html" class="footer__link">Music</a></li>
-            <li><a href="the-journey.html" class="footer__link">The Journey</a></li>
-            <li><a href="apply.html" class="footer__link">Apply</a></li>
-            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="music.html" class="footer__link" data-i18n="nav.music">Music</a></li>
+            <li><a href="the-journey.html" class="footer__link" data-i18n="nav.journey">The Journey</a></li>
+            <li><a href="apply.html" class="footer__link" data-i18n="nav.apply">Apply</a></li>
+            <li><a href="about.html" class="footer__link" data-i18n="nav.about">About</a></li>
           </ul>
         </div>
       </div>
@@ -584,5 +595,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="lang.js"></script>
 </body>
 </html>

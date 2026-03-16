@@ -15,12 +15,19 @@
   <a href="#main" class="skip-link">Skip to content</a>
 
   <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="index.html" class="nav__logo"><img src="logo.png" alt="Eric Olivier Mario" class="nav__logo-img"></a>
+    <div class="nav__brand">
+      <a href="index.html" class="nav__logo"><img src="logo.png" alt="Eric Olivier Mario" class="nav__logo-img"></a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-toggle__en">EN</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__fr">FR</span>
+      </button>
+    </div>
     <ul class="nav__links">
-      <li><a href="music.html" class="nav__link">Music</a></li>
-      <li><a href="the-journey.html" class="nav__link nav__link--active">The Journey</a></li>
-      <li><a href="apply.html" class="nav__link">Apply</a></li>
-      <li><a href="about.html" class="nav__link">About</a></li>
+      <li><a href="music.html" class="nav__link" data-i18n="nav.music">Music</a></li>
+      <li><a href="the-journey.html" class="nav__link nav__link--active" data-i18n="nav.journey">The Journey</a></li>
+      <li><a href="apply.html" class="nav__link" data-i18n="nav.apply">Apply</a></li>
+      <li><a href="about.html" class="nav__link" data-i18n="nav.about">About</a></li>
     </ul>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
       <span class="nav__toggle-line"></span>
@@ -30,10 +37,15 @@
   </nav>
 
   <div class="nav__mobile-overlay" aria-hidden="true">
-    <a href="music.html">Music</a>
-    <a href="the-journey.html">The Journey</a>
-    <a href="apply.html">Apply</a>
-    <a href="about.html">About</a>
+    <a href="music.html" data-i18n="nav.music">Music</a>
+    <a href="the-journey.html" data-i18n="nav.journey">The Journey</a>
+    <a href="apply.html" data-i18n="nav.apply">Apply</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile" aria-label="Switch language">
+      <span class="lang-toggle__en">EN</span>
+      <span class="lang-toggle__sep">|</span>
+      <span class="lang-toggle__fr">FR</span>
+    </button>
   </div>
 
   <div class="page-wrapper">
@@ -42,29 +54,29 @@
       <!-- Entrance -->
       <section class="journey-entrance">
         <div class="hero-reveal hero-reveal-1">
-          <span class="label">The Journey</span>
+          <span class="label" data-i18n="journey.label">The Journey</span>
         </div>
-        <h1 class="hero-reveal hero-reveal-2" style="font-size: clamp(36px, 5vw, 64px); margin-top: var(--space-lg); margin-bottom: var(--space-lg); text-align: center;">Training for artists<br>who are ready to stop<br>performing and start arriving.</h1>
-        <p class="microcopy hero-reveal hero-reveal-3">This is not education. It is excavation.</p>
+        <h1 class="hero-reveal hero-reveal-2" style="font-size: clamp(36px, 5vw, 64px); margin-top: var(--space-lg); margin-bottom: var(--space-lg); text-align: center;" data-i18n-html="journey.heading">Training for artists<br>who are ready to stop<br>performing and start arriving.</h1>
+        <p class="microcopy hero-reveal hero-reveal-3" data-i18n="journey.microcopy">This is not education. It is excavation.</p>
       </section>
 
       <!-- Philosophy -->
       <section class="philosophy section section--large-pad">
         <div class="container--narrow reveal">
-          <p>Most artist development focuses on skill, audience, and output.</p>
-          <p>This work focuses on something underneath all of that: who you are when you create.</p>
-          <p>The Journey is a guided passage through two territories — from finding your creative foundation and reconnecting to your authentic voice, to inhabiting presence through sound and building something entirely yours.</p>
-          <p style="color: var(--text-primary); font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic;">It is not for everyone. It is for artists who already sense that their next evolution is not technical.</p>
+          <p data-i18n="journey.phil.p1">Most artist development focuses on skill, audience, and output.</p>
+          <p data-i18n="journey.phil.p2">This work focuses on something underneath all of that: who you are when you create.</p>
+          <p data-i18n="journey.phil.p3">The Journey is a guided passage through two territories — from finding your creative foundation and reconnecting to your authentic voice, to inhabiting presence through sound and building something entirely yours.</p>
+          <p style="color: var(--text-primary); font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic;" data-i18n="journey.phil.p4">It is not for everyone. It is for artists who already sense that their next evolution is not technical.</p>
         </div>
 
         <div class="container--narrow reveal" style="margin-top: var(--space-3xl);">
-          <h3 class="journey-gains__title">What shifts when you do this work</h3>
+          <h3 class="journey-gains__title" data-i18n="journey.gains.title">What shifts when you do this work</h3>
           <ul class="journey-gains__list">
-            <li class="journey-gains__item">A clearer sense of who you are when you create — and why that matters more than any technique</li>
-            <li class="journey-gains__item">The ability to finish what you start, because you're no longer creating against yourself</li>
-            <li class="journey-gains__item">A sound that is recognisably yours — not assembled from references, but built from what you actually carry</li>
-            <li class="journey-gains__item">The confidence to sit with uncertainty in the creative process without abandoning the work</li>
-            <li class="journey-gains__item">A relationship with music that feels sustainable — not driven by output, but by genuine presence</li>
+            <li class="journey-gains__item" data-i18n="journey.gains.1">A clearer sense of who you are when you create — and why that matters more than any technique</li>
+            <li class="journey-gains__item" data-i18n="journey.gains.2">The ability to finish what you start, because you're no longer creating against yourself</li>
+            <li class="journey-gains__item" data-i18n="journey.gains.3">A sound that is recognisably yours — not assembled from references, but built from what you actually carry</li>
+            <li class="journey-gains__item" data-i18n="journey.gains.4">The confidence to sit with uncertainty in the creative process without abandoning the work</li>
+            <li class="journey-gains__item" data-i18n="journey.gains.5">A relationship with music that feels sustainable — not driven by output, but by genuine presence</li>
           </ul>
         </div>
       </section>
@@ -74,30 +86,30 @@
 
         <!-- Module I -->
         <div class="module-card reveal">
-          <p class="label module-card__label">Module I</p>
-          <h2 class="module-card__title">Rooted Creation</h2>
-          <p class="module-card__tagline">Discover your creative foundation — a single session to reconnect with your authentic voice.</p>
-          <p class="module-card__body">A 2-hour discovery session for new students. Together we unearth your influences, build a project from scratch in Logic Pro or the DAW of your choice, and define your sonic direction.</p>
-          <p class="module-card__body">You walk away with a reference track, a creative brief defining your artist identity, and a next steps roadmap.</p>
+          <p class="label module-card__label" data-i18n="journey.mod1.label">Module I</p>
+          <h2 class="module-card__title" data-i18n="journey.mod1.title">Rooted Creation</h2>
+          <p class="module-card__tagline" data-i18n="journey.mod1.tagline">Discover your creative foundation — a single session to reconnect with your authentic voice.</p>
+          <p class="module-card__body" data-i18n="journey.mod1.body1">A 2-hour discovery session for new students. Together we unearth your influences, build a project from scratch in Logic Pro or the DAW of your choice, and define your sonic direction.</p>
+          <p class="module-card__body" data-i18n="journey.mod1.body2">You walk away with a reference track, a creative brief defining your artist identity, and a next steps roadmap.</p>
           <div class="module-card__transform">
-            <p style="margin-bottom: 0;">From starting with nothing &nbsp;→&nbsp; to building from what you actually carry.</p>
+            <p style="margin-bottom: 0;" data-i18n="journey.mod1.transform">From starting with nothing &nbsp;→&nbsp; to building from what you actually carry.</p>
           </div>
-          <p class="module-card__format">Single session &nbsp;·&nbsp; 2 hours &nbsp;·&nbsp; 1-to-1 &nbsp;·&nbsp; £69</p>
-          <a href="module-1.html" class="link-arrow">Explore Module I</a>
+          <p class="module-card__format" data-i18n="journey.mod1.format">Single session &nbsp;·&nbsp; 2 hours &nbsp;·&nbsp; 1-to-1 &nbsp;·&nbsp; £69</p>
+          <a href="module-1.html" class="link-arrow" data-i18n="journey.mod1.cta">Explore Module I</a>
         </div>
 
         <!-- Module II -->
         <div class="module-card reveal reveal-delay-1">
-          <p class="label module-card__label">Module II</p>
-          <h2 class="module-card__title">Presence &amp; Sound</h2>
-          <p class="module-card__tagline">Building depth through weekly practice — crafting a complete track that is entirely yours.</p>
-          <p class="module-card__body">Four weekly 1-to-1 sessions that take you from grounding and listening to designing your own sounds and completing a full composition. Each week builds on the last.</p>
-          <p class="module-card__body">You walk away with a completed reference track, a personal sound palette, a listening log, and direct access to Eric throughout via phone and WhatsApp.</p>
+          <p class="label module-card__label" data-i18n="journey.mod2.label">Module II</p>
+          <h2 class="module-card__title" data-i18n-html="journey.mod2.title">Presence &amp; Sound</h2>
+          <p class="module-card__tagline" data-i18n="journey.mod2.tagline">Building depth through weekly practice — crafting a complete track that is entirely yours.</p>
+          <p class="module-card__body" data-i18n="journey.mod2.body1">Four weekly 1-to-1 sessions that take you from grounding and listening to designing your own sounds and completing a full composition. Each week builds on the last.</p>
+          <p class="module-card__body" data-i18n="journey.mod2.body2">You walk away with a completed reference track, a personal sound palette, a listening log, and direct access to Eric throughout via phone and WhatsApp.</p>
           <div class="module-card__transform">
-            <p style="margin-bottom: 0;">From scattered ideas &nbsp;→&nbsp; to a cohesive creation rooted in who you are.</p>
+            <p style="margin-bottom: 0;" data-i18n="journey.mod2.transform">From scattered ideas &nbsp;→&nbsp; to a cohesive creation rooted in who you are.</p>
           </div>
-          <p class="module-card__format">4 weekly sessions &nbsp;·&nbsp; 1-to-1 &nbsp;·&nbsp; Async support &nbsp;·&nbsp; £199/month</p>
-          <a href="module-2.html" class="link-arrow">Explore Module II</a>
+          <p class="module-card__format" data-i18n="journey.mod2.format">4 weekly sessions &nbsp;·&nbsp; 1-to-1 &nbsp;·&nbsp; Async support &nbsp;·&nbsp; £199/month</p>
+          <a href="module-2.html" class="link-arrow" data-i18n="journey.mod2.cta">Explore Module II</a>
         </div>
 
       </section>
@@ -106,28 +118,28 @@
       <section class="fit-section section">
         <div class="container">
           <div class="text-center reveal" style="margin-bottom: var(--space-3xl);">
-            <span class="label">The Space</span>
+            <span class="label" data-i18n="journey.space.label">The Space</span>
           </div>
           <div class="fit-grid reveal">
             <div class="fit-col">
-              <h3 class="fit-col__title">This space is for artists who&nbsp;—</h3>
+              <h3 class="fit-col__title" data-i18n="journey.fit.yes.title">This space is for artists who&nbsp;—</h3>
               <ul class="fit-col__list">
-                <li class="fit-col__item">Are seeking personal transformation through their creative work</li>
-                <li class="fit-col__item">Want to learn music production from the ground up while developing their unique voice</li>
-                <li class="fit-col__item">Are ready to expand their creativity and build a cohesive sonic universe</li>
-                <li class="fit-col__item">Are willing to slow down to go deeper</li>
-                <li class="fit-col__item">Are drawn to this page for reasons they may not fully articulate yet</li>
+                <li class="fit-col__item" data-i18n="journey.fit.yes.1">Are seeking personal transformation through their creative work</li>
+                <li class="fit-col__item" data-i18n="journey.fit.yes.2">Want to learn music production from the ground up while developing their unique voice</li>
+                <li class="fit-col__item" data-i18n="journey.fit.yes.3">Are ready to expand their creativity and build a cohesive sonic universe</li>
+                <li class="fit-col__item" data-i18n="journey.fit.yes.4">Are willing to slow down to go deeper</li>
+                <li class="fit-col__item" data-i18n="journey.fit.yes.5">Are drawn to this page for reasons they may not fully articulate yet</li>
               </ul>
             </div>
             <div class="fit-divider"></div>
             <div class="fit-col fit-col--not">
-              <h3 class="fit-col__title" style="color: var(--text-muted);">This is not the right fit if you&nbsp;—</h3>
+              <h3 class="fit-col__title" style="color: var(--text-muted);" data-i18n="journey.fit.no.title">This is not the right fit if you&nbsp;—</h3>
               <ul class="fit-col__list">
-                <li class="fit-col__item" style="color: var(--text-muted);">Are only looking for production techniques without the inner work</li>
-                <li class="fit-col__item" style="color: var(--text-muted);">Want to grow your audience or streaming numbers</li>
-                <li class="fit-col__item" style="color: var(--text-muted);">Need external validation to continue creating</li>
-                <li class="fit-col__item" style="color: var(--text-muted);">Are not willing to invest time in weekly practice</li>
-                <li class="fit-col__item" style="color: var(--text-muted);">Want a curriculum without the creative self-discovery</li>
+                <li class="fit-col__item" style="color: var(--text-muted);" data-i18n="journey.fit.no.1">Are only looking for production techniques without the inner work</li>
+                <li class="fit-col__item" style="color: var(--text-muted);" data-i18n="journey.fit.no.2">Want to grow your audience or streaming numbers</li>
+                <li class="fit-col__item" style="color: var(--text-muted);" data-i18n="journey.fit.no.3">Need external validation to continue creating</li>
+                <li class="fit-col__item" style="color: var(--text-muted);" data-i18n="journey.fit.no.4">Are not willing to invest time in weekly practice</li>
+                <li class="fit-col__item" style="color: var(--text-muted);" data-i18n="journey.fit.no.5">Want a curriculum without the creative self-discovery</li>
               </ul>
             </div>
           </div>
@@ -137,9 +149,9 @@
       <!-- Application Bridge -->
       <section class="apply-bridge reveal">
         <div class="container--narrow text-center">
-          <p>Enrollment is by application only.</p>
-          <p>This is not about gatekeeping. It is about ensuring the space holds what it needs to hold.</p>
-          <a href="apply.html" class="btn">Apply</a>
+          <p data-i18n="journey.apply.p1">Enrollment is by application only.</p>
+          <p data-i18n="journey.apply.p2">This is not about gatekeeping. It is about ensuring the space holds what it needs to hold.</p>
+          <a href="apply.html" class="btn" data-i18n="journey.apply.btn">Apply</a>
         </div>
       </section>
 
@@ -149,14 +161,14 @@
       <!-- Newsletter Signup -->
       <div class="newsletter-bar">
         <div class="newsletter-inner">
-          <p class="newsletter-label">Stay close</p>
-          <p class="newsletter-sub">New music, reflections, and occasional openings. Only when there is something real to say.</p>
+          <p class="newsletter-label" data-i18n="newsletter.label">Stay close</p>
+          <p class="newsletter-sub" data-i18n="newsletter.sub">New music, reflections, and occasional openings. Only when there is something real to say.</p>
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <div class="newsletter-fields">
-              <input type="text" name="name" placeholder="Your name" autocomplete="given-name" class="newsletter-input" />
-              <input type="email" name="email" placeholder="Your email" autocomplete="email" required class="newsletter-input" />
+              <input type="text" name="name" placeholder="Your name" autocomplete="given-name" class="newsletter-input" data-i18n-placeholder="newsletter.name-placeholder" />
+              <input type="email" name="email" placeholder="Your email" autocomplete="email" required class="newsletter-input" data-i18n-placeholder="newsletter.email-placeholder" />
               <button type="submit" class="newsletter-btn">
-                <span class="newsletter-btn-text">Subscribe</span>
+                <span class="newsletter-btn-text" data-i18n="newsletter.btn">Subscribe</span>
                 <span class="newsletter-btn-loading" aria-hidden="true" style="display:none;">...</span>
               </button>
             </div>
@@ -217,10 +229,10 @@
         <span class="footer__name">Eric Olivier Mario</span>
         <div class="footer__right">
           <ul class="footer__links">
-            <li><a href="music.html" class="footer__link">Music</a></li>
-            <li><a href="the-journey.html" class="footer__link">The Journey</a></li>
-            <li><a href="apply.html" class="footer__link">Apply</a></li>
-            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="music.html" class="footer__link" data-i18n="nav.music">Music</a></li>
+            <li><a href="the-journey.html" class="footer__link" data-i18n="nav.journey">The Journey</a></li>
+            <li><a href="apply.html" class="footer__link" data-i18n="nav.apply">Apply</a></li>
+            <li><a href="about.html" class="footer__link" data-i18n="nav.about">About</a></li>
           </ul>
         </div>
       </div>
@@ -229,5 +241,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="lang.js"></script>
 </body>
 </html>
